@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head_title_block %}
+Support - {{ block.super }}
+{% endblock %}
+
+{% block main_content %}
+<h1>Support</h1>
+   <div class="row">
+       
+        <div class="col-md-3">
+            
+            <h4>Account access</h4>
+            <ul>
+               <li>Login issues</li>
+                <li>Deactivated account</li>
+                <li>Changing Institutions</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h4>Settings and features</h4>
+            <ul>
+                <li>Notifications</li>
+                <li>Emails</li>
+                <li>Profile/settings</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+
+            <h4>APIs</h4>
+            <ul>
+               <li>API documentation</li>
+               <li>Obtaining an API key</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+
+            <h4>Contact Us</h4>
+            <ul>
+               <li>Email</li>
+               <li>Tweet</li>
+               <li>Visit</li>
+            </ul>
+        </div>
+    </div><!-- end: row -->
+        
+{% endblock %}

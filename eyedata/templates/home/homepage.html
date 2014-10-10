@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head_title_block %}
+{{ block.super }}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block main_content %}
+
+<!-- Jumbotron Header -->
+<header class="jumbotron hero-spacer">
+    <h2 style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></h2 >
+    <p> </span>Can we use anonymized datasets in research?  Can robust insights be generated from such anonymized datasets?</p>
+    <p><a class="btn btn-primary btn-large">Learn More &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    </p> 
+    
+    
+</header>
+
+
+   <!-- Title -->
+   <hr />
+   <!-- /.row -->
+   <!-- Page Features -->
+   <div class="row text-center"> 
+        {% for x in 'hack' %}{# loops 4x, once for each letter in string #}
+            {% include "home/feature_block.html" %}        
+        {% endfor %}
+   </div>
+   <!-- /.row -->
+   
+   
+{% endblock %}

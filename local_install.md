@@ -1,11 +1,3 @@
-eyeData
-=======
-
-Repo for DPSI Team eyeData. This project includes a set of tools for searching and exploring survey data on Dataverse.
-
-
-----
-
 ## Install (on OS X)
 
 This is a quick checklist to install eyeData on an OS X machine.  Currently, it installs the [twoscoops project template](https://github.com/twoscoops/django-twoscoops-project) for [Django 1.6](https://docs.djangoproject.com/en/1.6/), including creating a database, and running a skeleton site. 
