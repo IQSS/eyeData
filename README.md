@@ -24,15 +24,15 @@ This is a quick checklist to install eyeData on an OS X machine.  Currently, it 
 
 * Use the [mac client](https://mac.github.com/) if desired
 
-#### Setup on the local machine
+### Setup on the local machine
 
-##### cd into the eyeData repository
+#### cd into the eyeData repository
 
 ```
 cd ~\eyeData
 ```
 
-##### Install the virtualenv and the requirements
+#### Install the virtualenv and the requirements
 
 This may take a minute or two.  Xcode needs to be installed.
     
@@ -43,7 +43,7 @@ pip install -r requirements/local.txt
 
 If you run into Xcode (or other errors) when running the install, google it.  Sometimes the (Xcode license agreement hasn't been accepted)[http://stackoverflow.com/questions/26197347/agreeing-to-the-xcode-ios-license-requires-admin-privileges-please-re-run-as-r/26197363#26197363]
 
-##### Configure settings (still in ~\eyeData)
+#### Configure settings (still in ~\eyeData)
 
 * Edit the postactivate script for the [virtualenv](http://virtualenv.readthedocs.org/en/latest/)
 
@@ -70,7 +70,7 @@ echo $DJANGO_SETTINGS_MODULE
 
 You should see ```eyedata.settings.local```
 
-##### Sync the databse (still in ~\eyeData)
+#### Sync the database (still in ~\eyeData)
 
 ```
 cd eyedata
