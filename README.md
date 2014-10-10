@@ -6,7 +6,7 @@ Repo for DPSI Team eyeData. This project includes a set of tools for searching a
 
 ----
 
-## Install (on OS X)
+## Local Install (on OS X)
 
 This is a quick checklist to install eyeData on an OS X machine.  Currently, it installs the [twoscoops project template](https://github.com/twoscoops/django-twoscoops-project) for [Django 1.6](https://docs.djangoproject.com/en/1.6/), including creating a database, and running a skeleton site. 
 
@@ -24,7 +24,7 @@ This is a quick checklist to install eyeData on an OS X machine.  Currently, it 
 
 * Use the [mac client](https://mac.github.com/) if desired
 
-#### Setup
+#### Setup on the local machine
 
 ##### cd into the eyeData repository
 
@@ -32,7 +32,7 @@ This is a quick checklist to install eyeData on an OS X machine.  Currently, it 
 cd ~\eyeData
 ```
 
-#### #Install the virtualenv and the requirements
+##### Install the virtualenv and the requirements
 
 This may take a minute or two.  Xcode needs to be installed.
     
@@ -43,7 +43,7 @@ pip install -r requirements/local.txt
 
 If you run into Xcode (or other errors) when running the install, google it.  Sometimes the (Xcode license agreement hasn't been accepted)[http://stackoverflow.com/questions/26197347/agreeing-to-the-xcode-ios-license-requires-admin-privileges-please-re-run-as-r/26197363#26197363]
 
-#### Configure settings (still in ~\eyeData)
+##### Configure settings (still in ~\eyeData)
 
 * Edit the postactivate script for the [virtualenv](http://virtualenv.readthedocs.org/en/latest/)
 
@@ -70,7 +70,7 @@ echo $DJANGO_SETTINGS_MODULE
 
 You should see ```eyedata.settings.local```
 
-#### Install (still in ~\eyeData)
+##### Sync the databse (still in ~\eyeData)
 
 ```
 cd eyedata
@@ -79,7 +79,7 @@ python manage.py syncdb
 
 * Follow the prompts to create a superuser, create tables, etc.
 
-#### Run (still in ~\eyeData\eyedata)
+#### Run the test server (still in ~\eyeData\eyedata)
 
 ```
 python manage.py runserver
@@ -87,7 +87,7 @@ python manage.py runserver
 
 * Feel grateful to be alive
 
-#### Edit the files template files
+#### Edit the template files
 
 * Location ```~\eyeData\eyedata\templates```
 
