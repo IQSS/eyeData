@@ -41,7 +41,7 @@ mkvirtualenv eyedata
 pip install -r requirements/local.txt
 ```
 
-If you run into Xcode (or other errors) when running the install, google it.  Sometimes the (Xcode license agreement hasn't been accepted)[http://stackoverflow.com/questions/26197347/agreeing-to-the-xcode-ios-license-requires-admin-privileges-please-re-run-as-r/26197363#26197363]
+If you run into Xcode (or other errors) when running the install, google it.  Sometimes the [Xcode license agreement hasn't been accepted](http://stackoverflow.com/questions/26197347/agreeing-to-the-xcode-ios-license-requires-admin-privileges-please-re-run-as-r/26197363#26197363)
 
 #### Configure settings (still in ~\eyeData)
 
