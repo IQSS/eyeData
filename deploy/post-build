@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /webapps/code/eyeData
+git pull
+echo "Done."
