@@ -93,8 +93,6 @@ python manage.py runserver
 
 * ```base.html``` is the over-arching template
 
-![basic-screenshot](https://github.com/IQSS/eyeData/blob/master/docs/eyeData.png)
-
 
 ## Working with the project (post installation)
 
@@ -104,3 +102,4 @@ workon eyedata
 python manage.py runserver
 ```
 
+![basic-screenshot](https://github.com/IQSS/eyeData/blob/master/docs/eyeData.png)
