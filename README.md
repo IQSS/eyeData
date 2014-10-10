@@ -103,3 +103,7 @@ python manage.py runserver
 ```
 
 ![basic-screenshot](https://github.com/IQSS/eyeData/blob/master/docs/eyeData.png)
+
+## Vagrant environment
+
+This git repository contains a [Vagrant](http://vagrantup.com) environment that is used to mimic the Linux server that hosts the application in production. If you have Vagrant and [VirtualBox](http://virtualbox.org) installed you should be able to run `vagrant up` see the running eyeData app at http://localhost:8000 (but you'll need to set "DEBUG = True" in eyedata/eyedata/settings/production.py).
