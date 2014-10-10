@@ -45,7 +45,7 @@ If you run into Xcode (or other errors) when running the install, google it.  So
 
 #### Configure settings (still in ~\eyeData)
 
-* Edit the postactivate script for the [virtualenv](http://virtualenv.readthedocs.org/en/latest/)
+* Edit the [postactivate script for the virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/scripts.html#postactivate)
 
 ```
 vim $VIRTUAL_ENV/bin/postactivate
