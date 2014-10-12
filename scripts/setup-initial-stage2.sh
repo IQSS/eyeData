@@ -1,21 +1,17 @@
 #!/bin/sh
-echo "Setting up eyeData"
-# Platform for
-# Lightweight
-# Applications from
-# IQSS
-# Data Science
-useradd plaid
-# EPEL already enabled on HMDC VM
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6Server/x86_64/epel-release-6-8.noarch.rpm
-# on HMDC VM, httpd is already installed
-yum install -y python-pip python-devel httpd mod_wsgi ack elinks libjpeg-turbo-devel
+# This script should be wrapped by another script that
+# encloses all of these commands in "scl enable python27"
+# i.e. scl enable python27 "path/to/this/script.sh"
+# See also http://developerblog.redhat.com/2013/02/14/setting-up-django-and-python-2-7-on-red-hat-enterprise-6-the-easy-way/
+echo "Installing pip"
+easy_install pip # 2.7 version of pip
 #
 # Install virtualenvwrapper
 #
 echo "Install virtualenvwrapper"
 pip install virtualenvwrapper
-source /usr/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
+source /opt/rh/python27/root/usr/bin/virtualenvwrapper.sh
 #
 # Setup virtualenv
 echo "Setup virtualenv"
