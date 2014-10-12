@@ -6,23 +6,30 @@ Repo for DPSI Team eyeData. This project includes a set of tools for searching a
 
 ----
 
-## Local Install (on OS X)
+## Local Install (on OS X and Windows 8.1)
 
-This is a quick checklist to install eyeData on an OS X machine.  Currently, it installs the [twoscoops project template](https://github.com/twoscoops/django-twoscoops-project) for [Django 1.6](https://docs.djangoproject.com/en/1.6/), including creating a sqlite database and running a skeleton site. 
+This is a quick checklist to install eyeData on an OS X or Windows 8.1 machine.  Currently, it installs the [twoscoops project template](https://github.com/twoscoops/django-twoscoops-project) for [Django 1.6](https://docs.djangoproject.com/en/1.6/), including creating a sqlite database and running a skeleton site. 
 
 #### Install [pip](http://pip.readthedocs.org/en/latest/installing.html)
 
 * use sudo if needed
+* if on Windows, make sure [python](https://www.python.org/downloads/) is installed.
 
 #### Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 
 * depends on pip
+* if on windows, either install [virtualenvwrapper-win-1.1.5](https://pypi.python.org/pypi/virtualenvwrapper-win) or [cygwin](https://www.cygwin.com/).
 * remember to set the (shell startup file)[http://virtualenvwrapper.readthedocs.org/en/latest/install.html#shell-startup-file]
-
+```
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+``` 
+or, on windows, [this](http://stackoverflow.com/questions/2615968/installing-virtualenvwrapper-on-windows) might be helpful.
 
 #### Pull down the [eyeData repository](https://github.com/IQSS/eyeData)
 
-* Use the [mac client](https://mac.github.com/) if desired
+* Use the [mac client](https://mac.github.com/) if desired or [windows client](https://windows.github.com/)
 
 ### Setup on the local machine
 
@@ -45,10 +52,14 @@ If you run into Xcode (or other errors) when running the install, google it.  So
 
 #### Configure settings (still in ~\eyeData)
 
-* Edit the [postactivate script for the virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/scripts.html#postactivate)
+* Edit the [postactivate script for the virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/scripts.html#postactivate).
 
 ```
 vim $VIRTUAL_ENV/bin/postactivate
+```
+On windows:
+```
+vim %VIRTUAL_ENV%\Scripts\activate.bat
 ```
 
 'vim' may be any text editor
@@ -59,6 +70,11 @@ vim $VIRTUAL_ENV/bin/postactivate
 export DJANGO_DEBUG=True
 export DJANGO_SETTINGS_MODULE=eyedata.settings.local
 ```
+On windows:
+```
+set "DJANGO_DEBUG=True"
+set "DJANGO_SETTINGS_MODULE=eyedata.setings.local"
+```
 
 * Test the 'postactivate' script from the command line
 
@@ -66,6 +82,10 @@ export DJANGO_SETTINGS_MODULE=eyedata.settings.local
 deactivate
 workon eyedata
 echo $DJANGO_SETTINGS_MODULE
+```
+On Windows, use:
+```
+echo %DJANGO_SETTINGS_MODULE%
 ```
 
 You should see ```eyedata.settings.local```
@@ -106,4 +126,4 @@ python manage.py runserver
 
 ## Vagrant environment
 
-This git repository contains a [Vagrant](http://vagrantup.com) environment that is used to mimic the Linux server that hosts the application in production. If you have Vagrant and [VirtualBox](http://virtualbox.org) installed you should be able to run `vagrant up` see the running eyeData app at http://localhost:8000 (but you'll need to set "DEBUG = True" in eyedata/eyedata/settings/production.py).
+This git repository contains a [Vagrant](http://vagrantup.com) environment that is used to mimic the Linux server that hosts the application in production. If you have [Vagrant](http://www.vagrantup.com/) and [VirtualBox](http://virtualbox.org) installed you should be able to run `vagrant up` see the running eyeData app at http://localhost:8000 (but you'll need to set "DEBUG = True" in eyedata/eyedata/settings/production.py).
