@@ -26,6 +26,13 @@ scl enable python27 "pip install virtualenvwrapper"
 echo "Setup virtualenv directory"
 mkdir -p /webapps/virtualenvs
 chown plaid /webapps/virtualenvs
+mkdir /webapps/code
+chown plaid /webapps/code
+su plaid -l -s /bin/sh -c 'cd /webapps/code && git clone https://github.com/IQSS/eyeData.git'
+
+cp /git/eyeData/eyedata/eyedata/settings/secret_settings_prod.json /webapps/code/eyeData/eyedata/eyedata/settings/secret_settings_prod.json
+chown plaid:apache /webapps/code/eyeData/eyedata/eyedata/settings/secret_settings_prod.json
+chmod 440 /webapps/code/eyeData/eyedata/eyedata/settings/secret_settings_prod.json
 #
 # Create directory for sqlite db
 #

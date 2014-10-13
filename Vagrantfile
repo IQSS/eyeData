@@ -9,8 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppet-vagrant-boxes.puppetlabs.com-centos-65-x64-virtualbox-puppet.box"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box"
 
-  # the git repo is available within the VM at /webapps/code/PhthisisRavens
-  config.vm.synced_folder ".", "/webapps/code/eyeData"
+  # the git repo is available within the Vagrant VM for copying files, etc.
+  config.vm.synced_folder ".", "/git/eyeData"
 
   # initial, one-time setup of Python 2.7, installation of Django
   config.vm.provision "shell", path: "scripts/setup-initial.sh"

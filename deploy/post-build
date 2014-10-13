@@ -1,4 +1,7 @@
 #!/bin/sh
 cd /webapps/code/eyeData
+git status
 git pull
+git status
+scl enable python27 '/webapps/code/eyeData/deploy/post-build2'
 echo "Done."
