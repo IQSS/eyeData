@@ -18,4 +18,53 @@ rpm --import http://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/os/RPM-G
 yum install -y http://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/external_products/softwarecollections/yum-conf-softwarecollections-1.0-1.el6.noarch.rpm
 yum install -y python27
 echo "Setting up Django app with Python 2.7"
-scl enable python27 "/webapps/code/eyeData/scripts/setup-initial-stage2.sh"
+echo "Installing pip for Python 2.7"
+scl enable python27 "easy_install pip"
+echo "Install virtualenvwrapper"
+scl enable python27 "pip install virtualenvwrapper"
+
+echo "Setup virtualenv directory"
+mkdir -p /webapps/virtualenvs
+chown plaid /webapps/virtualenvs
+#
+# Create directory for sqlite db
+#
+echo "Create general data directory"
+#
+mkdir -p /webapps/data/eyedata
+chown apache /webapps/data/eyedata
+#
+echo "Create data directory for sqlite db"
+mkdir -p /webapps/data/eyedata/sqlite
+chown plaid /webapps/data/eyedata/sqlite
+#
+# configure apache
+#
+echo "Configure Apache"
+cp /webapps/code/eyeData/deploy/vagrant-centos-eyedata.conf /etc/httpd/conf.d/eyedata.conf
+chown plaid /etc/httpd/conf.d/eyedata.conf
+
+echo "Create /var/www directory owned by plaid"
+mkdir /var/www/eyedata
+chown plaid /var/www/eyedata
+
+#
+# run main setup script as "plaid" user with python 2.7
+#
+su plaid -l -s /bin/sh -c 'scl enable python27 "/webapps/code/eyeData/scripts/setup-initial-stage2.sh"'
+
+#
+# apache will need to write to database
+#
+chown apache /webapps/data/eyedata/sqlite/eyedata.db3
+#
+# Create directory for uploaded files, writable by apache
+#
+echo "Create data directory for uploaded files"
+mkdir -p /webapps/data/eyedata/eyedata_uploaded_files
+chown apache /webapps/data/eyedata/eyedata_uploaded_files
+#chown plaid /webapps/data/eyedata/eyedata_uploaded_files
+
+service httpd start
+chkconfig httpd on
+# on HMDC VM, changed SELinux to "permissive" in /etc/selinux/config
