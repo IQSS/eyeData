@@ -25,9 +25,13 @@ python manage.py syncdb --noinput --settings=eyedata.settings.production
 #
 
 #
-echo "Run collecstatic to copy files to the static www directory"
+echo "Run collectstatic to copy files to the static www directory"
 #
 python manage.py collectstatic --noinput --settings=eyedata.settings.production
 
+# commented out, will manually update for now
 #cp /webapps/code/eyeData/eyedata/eyedata/vagrant-centos-wsgi.py /var/www/eyedata/eyedata/wsgi.py
-# sudo /sbin/service httpd restart
+
+# touch to restart Apache (WSGIScriptReloading On)
+echo "touching wsgi.py to initiate Apache restart"
+touch /var/www/eyedata/eyedata/wsgi.py
