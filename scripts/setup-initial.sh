@@ -68,7 +68,6 @@ chown apache:plaid /webapps/data/eyedata/sqlite/eyedata.db3
 echo "Create data directory for uploaded files"
 mkdir -p /webapps/data/eyedata/eyedata_uploaded_files
 chown apache /webapps/data/eyedata/eyedata_uploaded_files
-#chown plaid /webapps/data/eyedata/eyedata_uploaded_files
 
 service httpd start
 chkconfig httpd on
