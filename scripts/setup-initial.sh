@@ -6,9 +6,7 @@ echo "Setting up eyeData"
 # IQSS
 # Data Science
 useradd plaid
-# HMDC VM has this group:
-groupadd dvnadmin
-usermod -g dvnadmin plaid
+cp /webapps/code/eyeData/deploy/files/etc/sudoers.d/plaid /etc/sudoers.d
 # EPEL already enabled on HMDC VM
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 # on HMDC VM, httpd is already installed
@@ -63,7 +61,7 @@ su plaid -l -s /bin/sh -c 'scl enable python27 "/webapps/code/eyeData/scripts/se
 #
 # apache will need to write to database
 #
-chown apache /webapps/data/eyedata/sqlite/eyedata.db3
+chown apache:plaid /webapps/data/eyedata/sqlite/eyedata.db3
 #
 # Create directory for uploaded files, writable by apache
 #
