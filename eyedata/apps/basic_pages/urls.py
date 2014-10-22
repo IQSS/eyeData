@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('apps.basic_pages.views',
 
-    #url(r'^home/$', 'view_homepage', name="view_homepage"),
+    # url(r'^home/$', 'view_homepage', name="view_homepage"),
 
     url(r'^about/$', 'view_about_page', name="view_about_page"),
 
@@ -11,6 +11,8 @@ urlpatterns = patterns('apps.basic_pages.views',
 
     #url(r'^/?$', 'view_homepage', name="default_homepage"),
     url(r'^/?$', 'view_homepage', name="view_homepage"),
+
+    url(r'^graph/$', 'view_example_page', name="view_example_page")
 
 
 )

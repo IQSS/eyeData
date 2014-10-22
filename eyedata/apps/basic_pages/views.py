@@ -30,6 +30,13 @@ def view_support_page(request):
                             , d\
                             , context_instance=RequestContext(request))
 
+def view_example_page(request):
+  d = {}
+  d['example_age'] = True;
+  return render_to_response('graph.html' \
+                            ,d \
+                            , context_instance=RequestContext(request))
+
 
 
 

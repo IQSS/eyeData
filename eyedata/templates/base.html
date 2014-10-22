@@ -15,9 +15,10 @@
       <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-      <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/cover.css" rel="stylesheet">  
     <!-- D3 JS library -->
-      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
       
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,97 +28,70 @@
     <![endif]-->
     
     {% block extra_css %}
-
-    <style type="text/css">
- 
-        div.bar {
-                display: inline-block;
-                width: 20px;
-                height: 75px;
-                background-color: teal;
-                margin-right: 2px;
-        }
-    </style>
-
     {% endblock %}
     {% block extra_js %}
-
-    <script type="text/javascript" src="d3-master/d3.js"></script>
-
     {% endblock %}
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'view_homepage' %}">eyeData</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                   <li{% if about_page %} class="active"{% endif %}>
-                        <a href="{% url 'view_about_page' %}">About</a>
-                    </li>                   
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">menu item</a></li>
-                            <li><a href="#">menu item</a></li>
-                            <li><a href="#">menu item</a></li>
-                          </ul>
-                    </li>
-                    
-                    <li{% if support_page %} class="active"{% endif %}><a href="{% url 'view_support_page' %}">Support</a></li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <!-- Page Content -->
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">eyeData</h3>
+            <!-- Navigation -->
+            <ul class="nav masthead-nav">
+             <li{% if about_page %} class="active"{% endif %}>
+                    <a href="{% url 'view_about_page' %}">About</a>
+              </li>                   
+              <li>
+                  <a href="#">Getting Started 
+              </li>
+                
+              <li{% if support_page %} class="active"{% endif %}><a href="{% url 'view_support_page' %}">Support</a></li>   
+            </ul>
+          </div>
+          <!-- /.inner -->
         </div>
-        <!-- /.container -->
-    </nav>
+        <!-- /.masthead clearfix-->
+        
+        <div class="inner cover">
+          {% block main_content %}
+              (main_content block)
+          {% endblock %}
+        </div>
 
-    <!-- Page Content -->
-    <div class="container">
-        {% block main_content %}
-            (main_content block)
-        {% endblock %}
-
-        {% block footer_content %}
         <!-- Footer -->
-        <hr />
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <p style="color:#808080;">&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
-                </div>
+        <div class="mastfoot">
+          <div class="inner">
+            {% block footer_content %}
+            <div class="col-xs-12">
+                <p style="color:#808080;">&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
             </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <a href="http://blogs.law.harvard.edu/dpsi/"><img src="{{ STATIC_URL }}images/berkman-logo.png" alt="berkman-logo" width="350" /></a>
-                </div>
-                 <div class="col-xs-6 text-right">
-                     <span style="color:#808080;font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" xwidth="400" /></a>
-                </div>
+            <div class="col-xs-6">
+              <a href="http://blogs.law.harvard.edu/dpsi/"><img src="{{ STATIC_URL }}images/berkman-logo.png" alt="berkman-logo" width="350" /></a>
             </div>
-        </footer>
-        {% endblock %}
+            <div class="col-xs-6 text-right">
+               <span style="color:#808080;font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" xwidth="400" /></a>
+            </div>
+            {% endblock %}
+          </div>
+          <!-- /.inner -->
+        </div>
+        <!-- /.mastfoot -->
+      </div>
+      <!-- /.cover-container -->
     </div>
-    <!-- /.container -->
+    <!-- /.site-wrapper-inner -->
+  </div>
+  <!-- /.site-wrapper -->
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+  <!-- jQuery Version 1.11.1 -->
+  <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 
 </body>
 
