@@ -29,8 +29,6 @@
     
     {% block extra_css %}
     {% endblock %}
-    {% block extra_js %}
-    {% endblock %}
 </head>
 
 <body>
@@ -92,6 +90,8 @@
   <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+  {% block extra_js %}
+  {% endblock %}
 
 </body>
 

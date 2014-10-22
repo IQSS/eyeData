@@ -4,72 +4,6 @@
 {{ block.super }}
 {% endblock %}
 
-{% block extra_js %}
- <script type="text/javascript">
-    
-    // width and height
-    var w = 500;
-    var h = 300;
-    var padding = 1;
-
-    // data
-    var dataset1 = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 
-                    13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
-
-    var dataset = [];
-
-    d3.json("worker.json", function(json) {
-        for (var key in json) {
-            console.log(dataset.push(json[key]));
-        }
-        visualize();
-    });
-
-    // Create SVG element
-    function visualize() { var svg = d3.select("body")
-                .append("svg")
-                .attr("width", w)
-                .attr("height", h);
-
-    svg.selectAll("rect")
-        .data(dataset)
-        .enter()
-        .append("rect")
-        .attr("x", function(d, i) {
-            return i * (w / dataset.length);
-        })
-        .attr("y", function(d) {
-            return h - (d / 2.5);
-        })
-        .attr("width", w / dataset.length - padding)
-        .attr("height", function(d) {
-            return d / 2.5;
-        })
-        .attr("fill", function(d) {
-            return "rgb(0, 0, " + (d / 2.5) + ")";
-        });
-
-   svg.selectAll("text")
-        .data(dataset)
-        .enter()
-        .append("text")
-        .text(function(d) {
-            return d;
-        })
-        .attr("x", function(d, i) {
-            return i * (w / dataset.length) + (w / dataset.length - padding) / 2;
-        })
-        .attr("y", function(d) {
-            return h - (d / 2.5) + 14;
-        })
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "11px")
-        .attr("fill", "white")
-        .attr("text-anchor", "middle");
-   }
-   </script>
-{% endblock %}
-
 {% block main_content %}
 
     <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></h1>
@@ -78,4 +12,70 @@
       <a href="/graph" class="btn btn-lg btn-default">Learn more &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     </p>
    
+{% endblock %}
+
+{% block extra_js %}
+ <script type="text/javascript">
+    
+    // width and height
+    var w = 500;
+    var h = 300;
+    var padding = 1;
+
+    // default for testing
+    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 
+                    13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+    var dataset1 = [];
+    
+    d3.json("worker.json", function(json) {
+        for (var key in json) {
+            console.log(dataset1.push(json[key]));
+        }
+        visualize();
+    });
+    
+    // Create SVG element
+    function visualize() { var svg = d3.select(".cover-container")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h);
+
+      svg.selectAll("rect")
+          .data(dataset)
+          .enter()
+          .append("rect")
+          .attr("x", function(d, i) {
+              return i * (w / dataset.length);
+          })
+          .attr("y", function(d) {
+              return h - 2.5*d;
+          })
+          .attr("width", w / dataset.length - padding)
+          .attr("height", function(d) {
+              return 2.5*d;
+          })
+          .attr("fill", function(d) {
+              return "rgb(0, 0, " + (d / 2.5) + ")";
+          });
+
+     svg.selectAll("text")
+          .data(dataset)
+          .enter()
+          .append("text")
+          .text(function(d) {
+              return d;
+          })
+          .attr("x", function(d, i) {
+              return i * (w / dataset.length) + (w / dataset.length - padding) / 2;
+          })
+          .attr("y", function(d) {
+              return h - (2.5* d) + 14;
+          })
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "11px")
+          .attr("fill", "white")
+          .attr("text-anchor", "middle");
+    }
+    </script>
 {% endblock %}
