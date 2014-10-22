@@ -6,7 +6,6 @@ echo "Setting up eyeData"
 # IQSS
 # Data Science
 useradd plaid
-cp /webapps/code/eyeData/deploy/files/etc/sudoers.d/plaid /etc/sudoers.d
 # EPEL already enabled on HMDC VM
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 # on HMDC VM, httpd is already installed
@@ -27,6 +26,7 @@ chown plaid /webapps/virtualenvs
 mkdir /webapps/code
 chown plaid /webapps/code
 su plaid -l -s /bin/sh -c 'cd /webapps/code && git clone https://github.com/IQSS/eyeData.git'
+cp /webapps/code/eyeData/deploy/files/etc/sudoers.d/plaid /etc/sudoers.d
 
 cp /git/eyeData/eyedata/eyedata/settings/secret_settings_prod.json /webapps/code/eyeData/eyedata/eyedata/settings/secret_settings_prod.json
 chown plaid:apache /webapps/code/eyeData/eyedata/eyedata/settings/secret_settings_prod.json

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<codeBook xmlns="http://www.icpsr.umich.edu/DDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.icpsr.umich.edu/DDI  http://www.icpsr.umich.edu/DDI/Version1-3.xsd">
+<stdyDscr>
+<citation>
+<titlStmt>
+<titl>Measuring the impact of microfinance in Hyderabad, India</titl>
+</titlStmt>
+<prodStmt>
+<producer>Abdul Latif Jameel Poverty Action Lab and Centre for Microfinance</producer>
+<prodDate></prodDate>
+<prodPlac>Hyderabad, India</prodPlac>
+<software version="">Stata, Excel</software>
+<fundAg>Institute for Financial Management and Research, ICICI Bank and anonymous donor</fundAg>
+<grantNo agency=""></grantNo>
+</prodStmt>
+<distStmt>
+<distrbtr>MacArthur Data Consolidation Project</distrbtr>
+<contact affiliation="JPAL, MIT" email=""></contact>
+<depositr>Cynthia Kinnan</depositr>
+<depDate>04/01/2008</depDate>
+<distDate>05/05/2008</distDate>
+</distStmt>
+<serStmt>
+<serName abbr="SERIES NAME ABBR">Baseline Survey (Impact Of Microfinance In Urban India)</serName>
+<serInfo></serInfo>
+</serStmt>
+<biblCit format="Bibliographic Citation Format">Bibliographic Citation</biblCit>
+</citation>
+<stdyInfo>
+<subject>
+<keyword>spandana, microcredit, hyderabad</keyword>
+</subject>
+<abstract date="">This database provides information on 2,800 households living in slums in Hyderabad, Andhra Pradesh (India’s fifth largest city) in 2005. Information was collected on household composition, education, employment, asset ownership, decision-making, expenditure, borrowing, saving, and any businesses currently operated by the household or stopped within the last year.</abstract>
+<sumDscr>
+<timePrd>2005</timePrd>
+<collDate>2005</collDate>
+<nation>India</nation>
+<geogCover>Hyderabad, Andhra Pradesh, India</geogCover>
+<geogUnit>Poor neighborhoods in Hyderabad, Andhra Pradesh</geogUnit>
+<anlyUnit>Individual (Section A), Household (Section B), Business (Section X)</anlyUnit>
+<universe>Households with a female member aged 18 to 55 in 120 slums in Hyderabad where the microlender was willing to start operating</universe>
+<dataKind>Survey Data</dataKind>
+</sumDscr>
+</stdyInfo>
+<method>
+<dataColl>
+<timeMeth>Cross-section</timeMeth>
+<dataCollector>Hansa Research Group and authors</dataCollector>
+<frequenc>1-time survey at individual level. 102 slums were resurveyed in 2007-2008</frequenc>
+<sampProc>120 slums were selected by Spandana, a large microfinance lender, as areas in which they were interested in opening branches. These slums were selected based on having residents who were desirable potential borrowers: poor, but not “the poorest of the poor.” Areas with high concentrations of construction workers were avoided because people who move frequently are not desirable microfinance clients.  In each slum, households were randomly selected, conditional on having a woman between the ages of 18-55 in the household. In the first 100 slums 20 households were surveyed; in the final 20 slums, 40 households were surveyed, giving a total sample of 2,800 households. Information was collected on all members of the household, defined as anyone who had resided in the household for at least 30 days in the past year and contributed to and/or drawn on the household resources.</sampProc>
+<deviat></deviat>
+<collMode></collMode>
+<resInstru>Structured: Questionnaire</resInstru>
+<sources>
+<dataSrc></dataSrc>
+<srcOrig></srcOrig>
+<srcChar></srcChar>
+<srcDocu></srcDocu>
+<sources></sources>
+</sources>
+<collSitu></collSitu>
+<actMin>Respondents were revisited 2 times, if they could not be located on the first visit.  20% of baseline surveys were back-checked by a separate survey team.  Baseline surveyors were trained for 5 days on each wave of the baseline survey</actMin>
+<ConOps>All baseline questionnaires were double-entered by the data entry company.  For the second baseline wave quality checking was implemented on approximately 0.5% of questionnaires: questionnaires were independently entered by the authors' research assistants and the results compared with the results from the data entry company.</ConOps>
+<weight></weight>
+<cleanOps>See document </cleanOps>
+</dataColl>
+<notes></notes>
+<anlyInfo>
+<respRate></respRate>
+<EstSmpErr></EstSmpErr>
+<dataAppr></dataAppr>
+</anlyInfo>
+</method>
+<othrStdyMat>
+<relMat></relMat>
+<relStdy></relStdy>
+<relPubl></relPubl>
+</othrStdyMat>
+</stdyDscr>
+<fileDscr>
+<fileTxt>
+<fileName>spandana_baseline_b2.0.dta</fileName>
+<fileCont>Data on household assets - household characteristics, income and expenditures</fileCont>
+<dimensns>
+<varQnty>8</varQnty>
+</dimensns>
+<fileType>.dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b2.2.dta</fileName>
+<fileCont>Data on businesses - items household plans to purchase, and amt</fileCont>
+<dimensns>
+<varQnty>4</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b9.0.dta</fileName>
+<fileCont>Data on consumption - item and quantities consumed - last month for 1-15, last year for 16-18</fileCont>
+<dimensns>
+<varQnty>3</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b9.1.dta</fileName>
+<fileCont>Data on consumption hh wants to reduce</fileCont>
+<dimensns>
+<varQnty>2</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b10.2.dta</fileName>
+<fileCont>Data on purpose of loans</fileCont>
+<dimensns>
+<varQnty>6</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b12.dta</fileName>
+<fileCont>DATA ON BANK OR SAVINGS ACCOUNTS  (INCLUDING POST OFFICE AND INFORMAL SAVINGS ACCOUNT SUCH AS CHIT FUNDS, ETC)</fileCont>
+<dimensns>
+<varQnty>37</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b13.1 insurance.dta</fileName>
+<fileCont>DATA ON INSURANCE</fileCont>
+<dimensns>
+<varQnty>4</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_loan_new.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>28</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_b_new</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>188</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>__spandana_baseline_hhloan.dta</fileName>
+<fileCont>QUESTIONS B10.1 TO B10.2 - loan amounts, purposes</fileCont>
+<dimensns>
+<varQnty>7</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>__spandana_baseline_hhmember.dta</fileName>
+<fileCont>CONTAINS QNS FROM SECTION A (1.1-1.34)</fileCont>
+<dimensns>
+<varQnty>4</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>spandana_baseline_a_new.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>47</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>loan_flags.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>6</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>biz_flags.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>4</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>missingzeroflags.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>8</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>businessownerflags.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>3</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName>householdflags.dta</fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty>5</varQnty>
+</dimensns>
+<fileType>dta</fileType>
+<software>Stata</software>
+</fileTxt>
+<fileTxt>
+<fileName></fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty></varQnty>
+</dimensns>
+<fileType></fileType>
+<software></software>
+</fileTxt>
+<fileTxt>
+<fileName></fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty></varQnty>
+</dimensns>
+<fileType></fileType>
+<software></software>
+</fileTxt>
+<fileTxt>
+<fileName></fileName>
+<fileCont></fileCont>
+<dimensns>
+<varQnty></varQnty>
+</dimensns>
+<fileType></fileType>
+<software></software>
+</fileTxt>
+</fileDscr>
+<otherMat>
+<labl>FINAL_Baseline_Qnr_part1.pdf
+</labl>
+</otherMat>
+<otherMat>
+<labl>Spandana Data Notes.doc
+</labl>
+</otherMat>
+<otherMat>
+<labl>Spandana Data Cleaning summary.doc
+</labl>
+</otherMat>
+<otherMat>
+<labl>
+</labl>
+</otherMat>
+<otherMat>
+<labl>
+</labl>
+</otherMat>
+<otherMat>
+<labl>
+</labl>
+</otherMat>
+</codeBook>

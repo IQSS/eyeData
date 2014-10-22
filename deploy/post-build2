@@ -11,6 +11,9 @@ source /opt/rh/python27/root/usr/bin/virtualenvwrapper.sh
 echo "Setup virtualenv"
 export WORKON_HOME=/webapps/virtualenvs
 workon eyedata
+# install latest requirements
+cd /webapps/code/eyeData
+pip install -r requirements/production.txt
 #
 # Validate settings file
 #
