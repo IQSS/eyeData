@@ -28,7 +28,7 @@
 
     var dataset1 = [];
     
-    d3.json("worker.json", function(json) {
+    d3.json("data/WorkerRepresentation/worker.json", function(json) {
         for (var key in json) {
             console.log(dataset1.push(json[key]));
         }
