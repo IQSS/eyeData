@@ -12,7 +12,9 @@ urlpatterns = patterns('apps.basic_pages.views',
     #url(r'^/?$', 'view_homepage', name="default_homepage"),
     url(r'^/?$', 'view_homepage', name="view_homepage"),
 
-    url(r'^graph/$', 'view_example_page', name="view_example_page")
+    url(r'^graph/$', 'view_example_page', name="view_example_page"),
 
+    url(r'^json-example/$', 'view_json_example', name="view_json_example")
 
+    
 )

@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block main_content %}
-
+<ul>
+    <li>{{ worker_data }}</li>
+    <li><a href="{% url 'view_json_example' %}">json example</a></li>
+</ul>
     <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></h1>
     <p class="lead">Adaptive Visualizations of Research Data</p>
     <p class="lead">
@@ -26,11 +29,11 @@
     var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 
                     13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
-    var dataset1 = [];
+    var dataset = [];
     
-    d3.json("data/WorkerRepresentation/worker.json", function(json) {
+    d3.json("{{ STATIC_URL }}js/worker.json", function(json) {
         for (var key in json) {
-            console.log(dataset1.push(json[key]));
+            console.log(dataset.push(json[key]));
         }
         visualize();
     });
