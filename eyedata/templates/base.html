@@ -25,8 +25,23 @@
     <![endif]-->
     
     {% block extra_css %}
+
+    <style type="text/css">
+ 
+        div.bar {
+                display: inline-block;
+                width: 20px;
+                height: 75px;
+                background-color: teal;
+                margin-right: 2px;
+        }
+    </style>
+
     {% endblock %}
     {% block extra_js %}
+
+    <script type="text/javascript" src="d3-master/d3.js"></script>
+
     {% endblock %}
 </head>
 

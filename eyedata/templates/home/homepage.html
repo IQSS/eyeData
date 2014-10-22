@@ -12,10 +12,9 @@
 <!-- Jumbotron Header -->
 <header class="jumbotron hero-spacer">
     <h2 style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></h2 >
-    <p>Adaptive Visualizations of Research Data</p>
+    <p>Adaptive Visualizations of Research Data: <a href="graph.html">Example</a></p>
     <p><a class="btn btn-primary btn-large">Learn More &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     </p> 
-    
     
 </header>
 
@@ -31,5 +30,73 @@
    </div>
    <!-- /.row -->
    
+   <div class="row text-center">
+       <div class="col-md-1 col-sm-6 hero-feature">
+        <script type="text/javascript">
+        
+        // width and height
+        var w = 500;
+        var h = 300;
+        var padding = 1;
+
+        // data
+        var dataset1 = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 
+                        13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+        var dataset = [];
+
+        d3.json("worker.json", function(json) {
+            for (var key in json) {
+                console.log(dataset.push(json[key]));
+            }
+            visualize();
+        });
+
+        // Create SVG element
+        function visualize() { var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+        svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x", function(d, i) {
+                return i * (w / dataset.length);
+            })
+            .attr("y", function(d) {
+                return h - (d / 2.5);
+            })
+            .attr("width", w / dataset.length - padding)
+            .attr("height", function(d) {
+                return d / 2.5;
+            })
+            .attr("fill", function(d) {
+                return "rgb(0, 0, " + (d / 2.5) + ")";
+            });
+
+       svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function(d) {
+                return d;
+            })
+            .attr("x", function(d, i) {
+                return i * (w / dataset.length) + (w / dataset.length - padding) / 2;
+            })
+            .attr("y", function(d) {
+                return h - (d / 2.5) + 14;
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "11px")
+            .attr("fill", "white")
+            .attr("text-anchor", "middle");
+       }
+       </script>
+       </div>
+   </div>
+
    
 {% endblock %}
