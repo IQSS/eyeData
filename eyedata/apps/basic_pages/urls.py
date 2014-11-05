@@ -14,7 +14,5 @@ urlpatterns = patterns('apps.basic_pages.views',
 
     url(r'^graph/$', 'view_example_page', name="view_example_page"),
 
-    url(r'^json-example/$', 'view_json_example', name="view_json_example")
-
-    
+    url(r'^generate_visual/(?P<dataset_id>[0-9]+)$', 'generate_visual', name='generate_visual')
 )
