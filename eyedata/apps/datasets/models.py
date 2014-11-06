@@ -17,7 +17,7 @@ class DatasetInfo(TimeStampedModel):
 
     # FileField - see https://docs.djangoproject.com/en/1.6/ref/models/fields/#filefield
     #
-    data_file = models.FileField(upload_to='datasets/%Y/%m/%d')
+    data_file = models.FileField(upload_to='eyedata_uploaded_files/%Y/%m/%d')
     
     visible = models.BooleanField(default=True)
         
