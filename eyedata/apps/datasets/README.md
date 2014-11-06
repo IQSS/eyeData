@@ -35,8 +35,14 @@ python manage.py runserver
 
 #### View model data
 
-- Go to the list datasets page: http://127.0.0.1:8000/datasets/list-datasets/
+- Go to the "Dataset Listing" page: http://127.0.0.1:8000/datasets/list-datasets/
 - Click on one of the dataset names (e.g. "Microfinance Hyderabad")
+
+#### Edit the model data
+
+- Log into the admin: http://127.0.0.1:8000/eyedata-admin/datasets/datasetinfo/
+- Click through, try editing/adding/deleting a file.
+- The results should show on the [Dataset Listing page](http://127.0.0.1:8000/datasets/list-datasets/)
 
 #### "Wiring" for a dataset detail page
 
