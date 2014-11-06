@@ -59,9 +59,10 @@ chown plaid /var/www/eyedata
 su plaid -l -s /bin/sh -c 'scl enable python27 "/webapps/code/eyeData/scripts/setup-initial-stage2.sh"'
 
 #
-# apache will need to write to database
+# apache and plaid need write access to the database
 #
 chown apache:plaid /webapps/data/eyedata/sqlite/eyedata.db3
+chmod 664 /webapps/data/eyedata/sqlite/eyedata.db3
 #
 # Create directory for uploaded files, writable by apache
 #
