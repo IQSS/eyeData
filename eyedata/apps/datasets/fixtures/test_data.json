@@ -21,7 +21,7 @@
         "created": "2014-11-05T21:54:37.693Z", 
         "data_file": "datasets/2014/11/05/wrps1.tab", 
         "modified": "2014-11-06T02:12:30.169Z", 
-        "variable_names_json": "", 
+        "variable_names_json": "{\"num_lines\": 2409}", 
         "visible": true, 
         "slug": "worker-representation", 
         "name": "Worker Representation"

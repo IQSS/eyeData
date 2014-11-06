@@ -19,9 +19,10 @@ a:hover {color:#ffcc00;}
             
             <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
             <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
-            <table class="table table-condensed">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>&nbsp;</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>File name</th>
@@ -31,6 +32,7 @@ a:hover {color:#ffcc00;}
                 <tbody>
                     {% for d in datasets %}
                     <tr>
+                        <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'view_dataset_detail' d.id %}">{{ d.name }}</td>  
                         <td>{% if d.description %}
                                 {{ d.description|safe }}
@@ -43,7 +45,7 @@ a:hover {color:#ffcc00;}
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="4">(no files available)</td>
+                        <td colspan="5">(no files available)</td>
                     </tr>
                     {% endfor %}
                 <tbody>
