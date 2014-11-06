@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block head_title_block %}
+{{ page_title }} - {{ block.super }}
+{% endblock %}
+
+
+{% block extra_css %}
+<style>
+a {text-decoration:underline;}
+a:hover {color:#ffcc00;}
+</style>
+{% endblock %}
+
+{% block main_content %}
+   <div class="row">
+        <div class="col-lg-12">
+            <h1>{{ page_title }}</h1>
+            
+            <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
+            <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>File name</th>
+                        <th>Loaded</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in datasets %}
+                    <tr>
+                        <td><a href="{% url 'view_dataset_detail' d.id %}">{{ d.name }}</td>  
+                        <td>{% if d.description %}
+                                {{ d.description|safe }}
+                            {% else %}
+                                (no description)
+                            {% endif %}</td>  
+                        <td>{{ d.get_file_basename }}{# note lack of "()" in function call #}</td>
+                            
+                        <td>{{ d.created|date:"M j, Y  P" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">(no files available)</td>
+                    </tr>
+                    {% endfor %}
+                <tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

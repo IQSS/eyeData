@@ -1,0 +1,30 @@
+[
+{
+    "pk": 1, 
+    "model": "datasets.datasetinfo", 
+    "fields": {
+        "description": "sample dataset 1", 
+        "created": "2014-11-05T21:48:53.169Z", 
+        "data_file": "datasets/2014/11/05/spandana_baseline_b2.0.dta", 
+        "modified": "2014-11-06T02:23:41.498Z", 
+        "variable_names_json": "", 
+        "visible": true, 
+        "slug": "microfinance-hyderabad", 
+        "name": "Microfinance Hyderabad"
+    }
+},
+{
+    "pk": 2, 
+    "model": "datasets.datasetinfo", 
+    "fields": {
+        "description": "..sample description...", 
+        "created": "2014-11-05T21:54:37.693Z", 
+        "data_file": "datasets/2014/11/05/wrps1.tab", 
+        "modified": "2014-11-06T02:12:30.169Z", 
+        "variable_names_json": "", 
+        "visible": true, 
+        "slug": "worker-representation", 
+        "name": "Worker Representation"
+    }
+}
+]
