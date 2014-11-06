@@ -41,7 +41,7 @@ python manage.py runserver
 #### Edit the model data
 
 - Log into the admin: http://127.0.0.1:8000/eyedata-admin/datasets/datasetinfo/
-- Click through, try editing/adding/deleting a file.
+- Click through, try editing/adding/deleting a "Dataset Info" object--which is defined in the [```models.py file```](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/models.py#L10).
 - The results should show on the [Dataset Listing page](http://127.0.0.1:8000/datasets/list-datasets/)
 
 #### "Wiring" for a dataset detail page
