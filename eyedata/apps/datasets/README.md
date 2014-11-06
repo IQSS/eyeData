@@ -47,8 +47,8 @@ python manage.py runserver
 #### "Wiring" for a dataset detail page
 
 1. The url definition: [```/datasets/dataset-detail/{{ dataset_id }}/```](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/urls.py#L8)
-2. Points to the ```view_dataset_detail``` function](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/views.py#L28)
-3. The function has access the file itself.  See [lines 52-62](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/views.py#L28) for an example of opening the file and saving some text (JSON) to the database.
+2. Points to the [```view_dataset_detail``` function](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/views.py#L28)
+3. The function has access the file itself.  See [lines 52-62](https://github.com/IQSS/eyeData/blob/master/eyedata/apps/datasets/views.py#L52) for an example of opening the file and saving some text (JSON) to the database.
 4. The dataset is sent to a [template for display](https://github.com/IQSS/eyeData/blob/master/eyedata/templates/datasets/detail.html).
 
 
