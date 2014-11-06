@@ -42,6 +42,8 @@ chown apache /webapps/data/eyedata
 echo "Create data directory for sqlite db"
 mkdir -p /webapps/data/eyedata/sqlite
 chown plaid /webapps/data/eyedata/sqlite
+chmod 664 -R /webapps/data/eyedata/sqlite/
+
 #
 # configure apache
 #
