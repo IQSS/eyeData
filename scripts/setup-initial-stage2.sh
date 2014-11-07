@@ -33,9 +33,13 @@ python manage.py syncdb --noinput --settings=eyedata.settings.production
 #
 echo "Create www directories (media/static/wsgi-related)"
 mkdir /var/www/eyedata/media # user uploads
+mkdir /var/www/eyedata/media/eyedata_uploaded_files  # test data files (public)
 mkdir /var/www/eyedata/static # images, js, css, etc.
 mkdir /var/www/eyedata/eyedata # wsgi.py
 cp /webapps/code/eyeData/eyedata/eyedata/vagrant-centos-wsgi.py /var/www/eyedata/eyedata/wsgi.py
+
+chmod 755 -R /var/www/eyedata/
+chmod 770 -R /var/www/eyedata/media/   # allow apache to write files
 
 #
 echo "Run collectatic to copy files to the static www directory"
