@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import json
+import pandas
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse, Http404
@@ -44,8 +45,9 @@ def view_dataset_detail(request, dataset_id):
     d['dataset'] = dataset
     
     # (3) Do some type of processing here
-    #
+    #SWITCH THIS BACK TO NOT ONCE IT WORKS CORRECTLY
     if not dataset.variable_names_json:
+    #if dataset.variable_names_json:
         #
         # example of opening the file
         #
@@ -55,9 +57,21 @@ def view_dataset_detail(request, dataset_id):
         fh.close()  # close the file
         
         # saving the number of file lines as a JSON string
-        # - here you could do something like save variable names
+        # save variable names
         #
-        file_info = { 'num_lines' : len(flines) }
+
+        fnamearray = str(fh).split('.')
+        ftype = fnamearray[-1]
+        fh.open (mode='rb')
+        if(ftype == 'dta'):
+            data = pandas.read_stata(fh)
+        elif (ftype == 'tab'):
+            data = pandas.read_table(fh)
+        fh.close
+
+        print('hello hello')
+
+        file_info = { 'num_lines' : len(flines), 'variable_names' : list(data.columns.values) }
         dataset.set_variable_names_json(file_info)
         dataset.save() 
     
