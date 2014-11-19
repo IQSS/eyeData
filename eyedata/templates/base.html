@@ -32,42 +32,53 @@
 
 <script type="text/javascript">
 
-// Currently assuming univariate data
+// create a file that includes all these and include it in base?
 
     // globals for formatting
+    // want to create dynamically sized graphs?
     var w = 500;
     var h = 800;
     var padding = 1;
 
-    function visualize(data_id) {
+    function visualize(data_id, variable) {
 
         // load the data
-        // call to grab the JSON
-        var data_json = fun();
+        // call to grab the JSON using the id of the desired data
+        // currently assuming univariate, need to create condition to handle multiple variables
+        var data_json = fun(data_id, variable);
         var dataset = JSON.parse(data_json);
+
+        // to scale the data to fit the screen
+        var scale = d3.scale.linear()
+                            .domain([0, d3.max(dataset))
+                            .range([h - padding, padding]);
 
         switch (dataset.type) {
             case "bar":
-                visualize_bar(dataset);
+                visualize_bar(dataset, scale);
                 label(dataset);
                 break;
 
             case "density":
-                visualize_density(dataset);
+                visualize_density(dataset, scale);
                 label(dataset);
                 break;
 
-            case "table":
-                visualize_table(dataset);
-                break;
+//            case "table":
+//                visualize_table(dataset);
+//                break;
 
-            case "scatter":
-                visualize_scatter(dataset);
-                label(dataset);
-                break;
+//          case "scatter":
+//              visualize_scatter(dataset);
+//              label(dataset);
+//              break;
         }
+
+        label(dataset, scale);
     }
 
+    // where does this put the graph?
+    // can I make the graph a d3 object and return it?
     function visualize_bar(dataset) {
 
         var svg = d3.select(".cover-container")
@@ -75,25 +86,27 @@
                   .attr("width", w)
                   .attr("height", h);
 
-        svg.selectAll("rect")       // creates rectangles for every datapoint
-            .data(dataset.data)          // binds data
+        svg.selectAll("rect")                             // creates rectangles for every datapoint
+            .data(dataset.data)                           // binds data
             .enter()
             .append("rect")
-            .attr("x", function(d, i) {
+            .attr("x", function(d, i) {                   // where the element is located horizontally
                 return i * (w / dataset.length);
             })
-            .attr("y", function(d) {
-                return h - 2.5*d;
+            .attr("y", function(d) {                      // location vertically
+//                return h - 2.5*d;
+                return h - scale(d);
             })
-            .attr("width", w / dataset.length - padding)
-            .attr("height", function(d) {
-                return 2.5*d;
+            .attr("width", w / dataset.length - padding)  // width
+            .attr("height", function(d) {                 // height
+//                return 2.5*d;
+                return scale(d);
             })
-            .attr("fill", function(d) {
-                return "rgb(0, 0, " + (d / 2.5) + ")";
+            .attr("fill", function(d) {                   // color, currently correlates with height
+                return "rgb(0, 0, " + (d / 2.5) + ")";    // add controls for color?
             });
 
-        svg.selectAll("text")
+        svg.selectAll("text")                             // add values on the corresponding bars
             .data(dataset)
             .enter()
             .append("text")
@@ -103,17 +116,16 @@
     }
 
     // set up title, axes, etc.
-    function label(dataset) {
+    function label(dataset) {                             // adds axes, titles, scales
 
-        // title
-        svg.append("text")
+        svg.append("text")                                // title
             .attr("x", (w / 2))             
             .attr("y", 0 - (margin.top / 2))
             .attr("text-anchor", "middle")  
             .style("font-size", "16px") 
             .text(dataset.title);
 
-        // axes
+        
 
     }
 </script>
