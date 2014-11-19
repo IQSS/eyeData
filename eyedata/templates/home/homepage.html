@@ -4,17 +4,19 @@
 {{ block.super }}
 {% endblock %}
 
-{% block main_content %}
-<ul>
-    <li>{{ worker_data }}</li>
-    <li><a href="{% url 'generate_visual' 0 %}">json example</a></li>
-</ul>
-    <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></h1>
+{% block main_content %}    
+    <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></span></h1>
     <p class="lead">Adaptive Visualizations of Research Data</p>
     <p class="lead">
       <a href="/graph" class="btn btn-lg btn-default">Learn more &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
     </p>
    
+    <div class="text-left">
+    <ul>
+        <li>{{ worker_data }}</li>
+        <li><a href="{% url 'view_list_datasets' %}" style="color:#006699;">list datasets</a></li>
+    </ul>
+    </div>
 {% endblock %}
 
 {% block extra_js %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head_title_block %}
+{{ page_title }} - {{ block.super }}
+{% endblock %}
+
+    
+{% block extra_css %}
+<style>
+a {text-decoration:underline;}
+a:hover {color:#ffcc00;}
+</style>
+{% endblock %}
+
+{% block main_content %}
+<div class="row">
+    <div class="col-lg-12 text-left">
+        
+        <h1>{{ page_title }}</h1>
+        
+        <p>
+            <a href="{% url 'view_list_datasets' %}">return to dataset listing</a>
+        |   <a href="{% url 'admin:datasets_datasetinfo_change' dataset.id %}">(edit dataset)</a>
+        </p>
+        
+        <ul>
+            <li><b>name:</b> {{ dataset.name }}</li>
+            <li><b>description:</b> {{ dataset.description }}</li>
+            <li><b>created:</b> {{ dataset.created }}</li>
+            <li><b>modified:</b> {{ dataset.modified }}</li>
+            <li><b>data_file:</b> {{ dataset.data_file }}</li>
+            <li><b>variable_names_json:</b> <pre><code>
+                {{ dataset.variable_names_json }}
+                </code></pre>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+{% endblock %}

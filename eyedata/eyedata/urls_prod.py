@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^eyedata-admin/', include(admin.site.urls)),
     
+    url(r'^datasets/', include('apps.datasets.urls')),
+    
     url(r'^', include('apps.basic_pages.urls')),
   
     
