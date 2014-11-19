@@ -10,9 +10,5 @@ urlpatterns = patterns('apps.basic_pages.views',
     url(r'^support/$', 'view_support_page', name="view_support_page"),
 
     #url(r'^/?$', 'view_homepage', name="default_homepage"),
-    url(r'^/?$', 'view_homepage', name="view_homepage"),
-
-    url(r'^graph/$', 'view_example_page', name="view_example_page"),
-
-    url(r'^generate_visual/(?P<dataset_id>[0-9]+)$', 'generate_visual', name='generate_visual')
+    url(r'^/?$', 'view_homepage', name="view_homepage")
 )
