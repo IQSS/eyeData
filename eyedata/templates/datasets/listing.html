@@ -19,7 +19,7 @@ a:hover {color:#ffcc00;}
             
             <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
             <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -39,7 +39,7 @@ a:hover {color:#ffcc00;}
                             {% else %}
                                 (no description)
                             {% endif %}</td>  
-                        <td>{{ d.get_file_basename }}{# note lack of "()" in function call #}</td>
+                        <td>{{ d.get_file_basename }}</td>
                             
                         <td>{{ d.created|date:"M j, Y  P" }}</td>
                     </tr>
@@ -50,6 +50,9 @@ a:hover {color:#ffcc00;}
                     {% endfor %}
                 <tbody>
             </table>
+            <div id="variables">
+
+            </div>
         </div>
     </div>
 {% endblock %}

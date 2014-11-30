@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/cover.css" rel="stylesheet">  
+    
     <!-- D3 JS library -->
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
       
@@ -168,6 +169,7 @@
           <div class="inner">
             <h3 class="masthead-brand"><a href="/">eyeData</a></h3>
             <!-- Navigation -->
+            <!--
             <ul class="nav masthead-nav">
              <li{% if about_page %} class="active"{% endif %}>
                     <a href="{% url 'view_about_page' %}">About</a>
@@ -178,6 +180,7 @@
                 
               <li{% if support_page %} class="active"{% endif %}><a href="{% url 'view_support_page' %}">Support</a></li>   
             </ul>
+            -->
           </div>
           <!-- /.inner -->
         </div>
@@ -194,13 +197,13 @@
           <div class="inner">
             {% block footer_content %}
             <div class="col-xs-12">
-                <p style="color:#808080;">&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
+                <p>&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
             </div>
             <div class="col-xs-6">
               <a href="http://blogs.law.harvard.edu/dpsi/"><img src="{{ STATIC_URL }}images/berkman-logo.png" alt="berkman-logo" width="350" /></a>
             </div>
             <div class="col-xs-6 text-right">
-               <span style="color:#808080;font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" /></a>
+               <span style="font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" /></a>
             </div>
             {% endblock %}
           </div>

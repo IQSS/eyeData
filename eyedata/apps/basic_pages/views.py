@@ -10,15 +10,6 @@ from eyedata.models import DataSet
 
 def view_homepage(request):
     d = {}
-    
-    # Get Data
-    # Analyze with Pandas
-    # Visualize data with D3 (or use vincent to wrap)
-    
-    
-    #d['page_title'] = 'Phthisis Ravens: TB Project'
-    d['worker_data'] = json.dumps({"1":525,"2":725,"3":658,"4":206,"5":270,"9":24})
-
     d['home_page'] = True
     
     return render_to_response('home/homepage.html'\
@@ -41,10 +32,9 @@ def view_support_page(request):
                             , d\
                             , context_instance=RequestContext(request))
 
-def view_example_page(request):
+def view_error_page(request):
   d = {}
-  d['example_age'] = True;
-  return render_to_response('graph.html' \
+  return render_to_response('404.html' \
                             ,d \
                             , context_instance=RequestContext(request))
 
