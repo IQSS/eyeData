@@ -4,16 +4,30 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-.hero-spacer {
-     margin-top: 30px; 
-    /* margin-top: 50px; */
+
+.table-scroll tbody, .table-scroll thead {
+  display: block;
 }
 
-.hero-feature {
-    margin-bottom: 30px;
+/* tables */
+.table-scroll tbody {
+  overflow: auto;
+  height: 20%;
 }
 
-.panel-body {
-  color: black;
+table.tablesorter thead tr .header {
+  background-image: url(../images/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
 }
 
+table.tablesorter thead tr .headerSortUp {
+  background-image: url(../images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url(../images/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}

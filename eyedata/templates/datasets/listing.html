@@ -6,10 +6,11 @@
 
 
 {% block extra_css %}
-<style>
-a {text-decoration:underline;}
-a:hover {color:#ffcc00;}
-</style>
+    <style>
+        a {text-decoration:underline;}
+        a:hover {color:#ffcc00;}
+    </style>
+    <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet">
 {% endblock %}
 
 {% block main_content %}
@@ -19,7 +20,7 @@ a:hover {color:#ffcc00;}
             
             <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
             <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
-            <table class="table">
+            <table id="datasets-table" class="table table-scroll tablesorter">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -55,4 +56,12 @@ a:hover {color:#ffcc00;}
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Table Sorter-->
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.metadata.js"></script>
+    <!-- Custom eyedata javascript -->
+    <script type="text/javascript" src="{{STATIC_URL}}js/eyedata.js"></script>
 {% endblock %}
