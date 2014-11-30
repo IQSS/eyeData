@@ -25,6 +25,8 @@ class DatasetInfo(TimeStampedModel):
 
     variable_names_json = models.TextField(blank=True)
 
+    variable_name_info_json = models.TextField(blank=True)
+
     def get_file_basename(self):
         return os.path.basename(self.data_file.name)
         
@@ -40,8 +42,19 @@ class DatasetInfo(TimeStampedModel):
         """
         assert python_obj is not None, "The python_obj cannot be None"
         self.variable_names_json = JSONFieldReader.get_python_val_as_json_string(python_obj)
-            
-    
+ 
+    def set_variable_name_info_json(self, python_obj):
+        """
+        Save a python object as JSON
+        """
+        assert python_obj is not None, "The python_obj cannot be None"
+        self.variable_name_info_json = JSONFieldReader.get_python_val_as_json_string(python_obj)           
+    def get_variable_name_info_json(self):
+        """
+        Return saved JSON as a python object
+        """
+        return JSONFieldReader.get_json_string_as_python_val(self.variable_name_info_json)
+
     def save(self, *args, **kwargs):
         # override the save command to create a slug
         self.slug = slugify(self.name)
