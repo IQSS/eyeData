@@ -9,6 +9,9 @@ from django.template import RequestContext
 
 from apps.datasets.models import DatasetInfo
 
+# helper code for commonly used functions
+from apps.datasets.helpers import *
+
 #spandana_baseline_b2.0.dta
 def view_list_datasets(request):
     """
@@ -135,6 +138,7 @@ def get_variable_info(request, dataset_id, variable_name):
     d['page_title'] = 'Dataset: %s' % dataset.name
     d['dataset'] = dataset
     
+<<<<<<< HEAD
     # (3) Do some type of processing here
     #SWITCH THIS BACK TO NOT ONCE IT WORKS CORRECTLY
 
@@ -186,3 +190,20 @@ def get_variable_info(request, dataset_id, variable_name):
     #return render_to_response('datasets/info.html', d, context_instance=RequestContext(request))
     return HttpResponse(str(file_info), content_type="application/json")
     
+=======
+
+# search view - renders a results page     
+def search(request):
+    query_string = ''
+    found_entries = None
+    if ('q' in request.GET) and request.GET['q'].strip():
+        query_string = request.GET['q']
+        
+        entry_query = get_query(query_string, ['title', 'body',])
+        
+        found_entries = Entry.objects.filter(entry_query).order_by('-pub_date')
+
+    return render_to_response('search/search_results.html',
+                          { 'query_string': query_string, 'found_entries': found_entries },
+                          context_instance=RequestContext(request))
+>>>>>>> 8077ec41c3606ba768296447a23133cbc5a56b99

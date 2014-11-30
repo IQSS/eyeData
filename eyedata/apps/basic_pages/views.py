@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.template import RequestContext
 
+from eyedata.models import DataSet
 
 def view_homepage(request):
     d = {}
@@ -23,14 +24,6 @@ def view_homepage(request):
     return render_to_response('home/homepage.html'\
                               , d\
                               , context_instance=RequestContext(request))
-
-
-
-def view_json_example(request):
-
-    # generate some JSON
-    json_str = """{"1":525,"2":725,"3":658,"4":206,"5":270,"9":24})"""
-    return HttpResponse(json_str, content_type="application/json")
 
 
 def view_about_page(request):
@@ -57,4 +50,16 @@ def view_example_page(request):
 
 
 
+def generate_visual(request, dataset_id = 0):
+  '''
+  Generates json output for D3 visualization of data.
+  '''
+  # need to grab the data set here...somehow (models? directly?)
+  # Analyze data based on post request values
+  # Return json dump
 
+  # dset = get_object_or_404(DataSet, pk = dataset_id)
+
+  # we return the json response (deal with this in D3? )
+  json_str = """{"1":525,"2":725,"3":658,"4":206,"5":270,"9":24})"""
+  return HttpResponse(json_str, content_type="application/json")

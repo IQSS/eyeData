@@ -4,10 +4,7 @@
 {{ block.super }}
 {% endblock %}
 
-{% block main_content %}
-
-
-    
+{% block main_content %}    
     <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></span></h1>
     <p class="lead">Adaptive Visualizations of Research Data</p>
     <p class="lead">
@@ -17,7 +14,6 @@
     <div class="text-left">
     <ul>
         <li>{{ worker_data }}</li>
-        <li><a href="{% url 'view_json_example' %}">json example</a></li>
         <li><a href="{% url 'view_list_datasets' %}" style="color:#006699;">list datasets</a></li>
     </ul>
     </div>
