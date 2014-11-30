@@ -138,7 +138,6 @@ def get_variable_info(request, dataset_id, variable_name):
     d['page_title'] = 'Dataset: %s' % dataset.name
     d['dataset'] = dataset
     
-<<<<<<< HEAD
     # (3) Do some type of processing here
     #SWITCH THIS BACK TO NOT ONCE IT WORKS CORRECTLY
 
@@ -189,8 +188,7 @@ def get_variable_info(request, dataset_id, variable_name):
 
     #return render_to_response('datasets/info.html', d, context_instance=RequestContext(request))
     return HttpResponse(str(file_info), content_type="application/json")
-    
-=======
+
 
 # search view - renders a results page     
 def search(request):
@@ -206,4 +204,3 @@ def search(request):
     return render_to_response('search/search_results.html',
                           { 'query_string': query_string, 'found_entries': found_entries },
                           context_instance=RequestContext(request))
->>>>>>> 8077ec41c3606ba768296447a23133cbc5a56b99
