@@ -7,20 +7,23 @@
 
 {% block extra_css %}
     <style>
-        a {text-decoration:underline;}
-        a:hover {color:#ffcc00;}
+        a {
+            text-decoration:underline;
+        }
+        a:hover {
+            color:#211DC3;
+        }
     </style>
-    <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet"/>
 {% endblock %}
 
 {% block main_content %}
-   <div class="row">
-        <div class="col-lg-12">
-            <h1>{{ page_title }}</h1>
-            
-            <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
+    <div class="container-fluid">
+        <h1>{{ page_title }}</h1>
+        <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
             <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
-            <table id="datasets-table" class="table table-scroll tablesorter">
+        <div class="row">    
+            <table id="datasets-table" class="table">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -32,7 +35,7 @@
                 </thead>
                 <tbody>
                     {% for d in datasets %}
-                    <tr>
+                    <tr dataset_id="{{ d.id }}">
                         <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'view_dataset_detail' d.id %}">{{ d.name }}</td>  
                         <td>{% if d.description %}
@@ -51,16 +54,19 @@
                     {% endfor %}
                 <tbody>
             </table>
-            <div id="variables">
-
-            </div>
         </div>
+        <!-- /.row -->
+        <div id="variables" class="row">
+        Second container.
+        </div>
+        <!-- /#variables -->
     </div>
+    <!-- /.container-fluid -->
 {% endblock %}
 
 {% block extra_js %}
     <!-- Table Sorter-->
-    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/jquery.metadata.js"></script>
     <!-- Custom eyedata javascript -->
     <script type="text/javascript" src="{{STATIC_URL}}js/eyedata.js"></script>

@@ -34,55 +34,29 @@
 <body>
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
-      <div class="cover-container">
-        <!-- Page Content -->
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand"><a href="/">eyeData</a></h3>
-            <!-- Navigation -->
-            <!--
-            <ul class="nav masthead-nav">
-             <li{% if about_page %} class="active"{% endif %}>
-                    <a href="{% url 'view_about_page' %}">About</a>
-              </li>                   
-              <li>
-                  <a href="#">Getting Started</a>
-              </li>
-                
-              <li{% if support_page %} class="active"{% endif %}><a href="{% url 'view_support_page' %}">Support</a></li>   
-            </ul>
-            -->
+      {% block main_content %}
+          (main_content block)
+      {% endblock %}
+
+
+      <!-- Footer -->
+      <div class="mastfoot">
+        <div class="inner">
+          <div class="col-xs-12">
+              <p>&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
           </div>
-          <!-- /.inner -->
-        </div>
-        <!-- /.masthead clearfix-->
-        
-        <div class="inner cover">
-          {% block main_content %}
-              (main_content block)
+          <div class="col-xs-6">
+            <a href="http://blogs.law.harvard.edu/dpsi/"><img src="{{ STATIC_URL }}images/berkman-logo.png" alt="berkman-logo" width="350" /></a>
+          </div>
+          <div class="col-xs-6 text-right">
+             <span style="font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" /></a>
+          </div>
+          {% block footer_content %}
           {% endblock %}
         </div>
-
-        <!-- Footer -->
-        <div class="mastfoot">
-          <div class="inner">
-            {% block footer_content %}
-            <div class="col-xs-12">
-                <p>&copy; Copyright {% now "Y" %}, President &amp; Fellows Harvard University</p>
-            </div>
-            <div class="col-xs-6">
-              <a href="http://blogs.law.harvard.edu/dpsi/"><img src="{{ STATIC_URL }}images/berkman-logo.png" alt="berkman-logo" width="350" /></a>
-            </div>
-            <div class="col-xs-6 text-right">
-               <span style="font-size:.85em;margin-right:.3em;">Powered by</span> <a href="http://datascience.iq.harvard.edu/dataverse"><img src="{{ STATIC_URL }}images/dataverseproject_logo.jpg" alt="dataverse-logo" /></a>
-            </div>
-            {% endblock %}
-          </div>
-          <!-- /.inner -->
-        </div>
-        <!-- /.mastfoot -->
+        <!-- /.inner -->
       </div>
-      <!-- /.cover-container -->
+      <!-- /.mastfoot -->
     </div>
     <!-- /.site-wrapper-inner -->
   </div>

@@ -15,7 +15,7 @@ function visualize(data_id, variable) {
   // call to grab the JSON using the id of the desired data
   // currently assuming univariate, need to create condition to handle multiple variables
   // var data_json = fun(data_id, variable);
-  $.getJSON("/variable-detail/" + data_id + "/" + variable + "/", function(dataset) {
+  $.getJSON("variable-detail/" + data_id + "/" + variable + "/", function(dataset) {
   // var dataset = JSON.parse(data_json);
 
     // to scale the data to fit the screen

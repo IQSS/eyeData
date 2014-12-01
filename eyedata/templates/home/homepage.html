@@ -4,10 +4,38 @@
 {{ block.super }}
 {% endblock %}
 
-{% block main_content %}    
-    <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></span></h1>
-    <p class="lead">Adaptive Visualizations of Research Data</p>
-    <p class="lead">
-      <a href="/datasets" class="btn btn-lg btn-default">View Sample Data Sets &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
-    </p>
+{% block main_content %}
+  <div class="cover-container">
+    <!-- Page Content -->
+    <div class="masthead clearfix">
+      <div class="inner">
+        <h3 class="masthead-brand"><a href="/">eyeData</a></h3>
+        <!-- Navigation -->
+        <!--
+        <ul class="nav masthead-nav">
+         <li{% if about_page %} class="active"{% endif %}>
+                <a href="{% url 'view_about_page' %}">About</a>
+          </li>                   
+          <li>
+              <a href="#">Getting Started</a>
+          </li>
+            
+          <li{% if support_page %} class="active"{% endif %}><a href="{% url 'view_support_page' %}">Support</a></li>   
+        </ul>
+        -->
+      </div>
+      <!-- /.inner -->
+    </div>
+    <!-- /.masthead clearfix-->
+        
+    <div class="inner cover">    
+      <h1 class="cover-heading" style="color:#c55b28;">eyeData <span class="glyphicon glyphicon-eye-open"></span></h1>
+      <p class="lead">Adaptive Visualizations of Research Data</p>
+      <p class="lead">
+        <a href="/datasets" class="btn btn-lg btn-default">View Sample Data Sets &nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+      </p>
+    </div>
+    <!-- /.inner-cover -->
+  </div>
+  <!-- /.cover-container -->
 {% endblock %}

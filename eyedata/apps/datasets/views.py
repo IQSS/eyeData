@@ -124,7 +124,7 @@ def get_variable_names(request, dataset_id):
         file_info = {'variable_names' : list(data.columns.values) }
         dataset.set_variable_names_json(file_info)
         dataset.save() 
-    return HttpResponse(str(file_info), content_type="application/json")
+    return HttpResponse(json.dumps(file_info), content_type="application/json")
 
 def get_variable_info(request, dataset_id, variable_name):     
     try:
@@ -187,7 +187,7 @@ def get_variable_info(request, dataset_id, variable_name):
         #dataset.save() 
 
     #return render_to_response('datasets/info.html', d, context_instance=RequestContext(request))
-    return HttpResponse(str(file_info), content_type="application/json")
+    return HttpResponse(json.dumps(file_info), content_type="application/json")
 
 
 # search view - renders a results page     
