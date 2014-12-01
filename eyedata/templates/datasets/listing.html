@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                     {% for d in datasets %}
-                    <tr dataset_id="{{ d.id }}">
+                    <tr dataset-id="{{ d.id }}">
                         <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'view_dataset_detail' d.id %}">{{ d.name }}</td>  
                         <td>{% if d.description %}
@@ -57,7 +57,8 @@
         </div>
         <!-- /.row -->
         <div id="variables" class="row">
-        Second container.
+        </div>
+        <div id="graphic" class="modal">
         </div>
         <!-- /#variables -->
     </div>
@@ -69,5 +70,6 @@
     <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/jquery.metadata.js"></script>
     <!-- Custom eyedata javascript -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/visualize.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/eyedata.js"></script>
 {% endblock %}

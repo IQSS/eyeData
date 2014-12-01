@@ -25,16 +25,34 @@ $(document).ready(function(){
   // attach on click handler to rows in table 
   $("#datasets-table tbody").on("click", "tr", function(event){
     var row = $(this);
-    if (row.hasClass("selected") && deselect(row.attr('dataset_id'))) {
-      row.removeClass("selected");
+    if (row.hasClass("selected")){
+      if (deselect(row.attr('dataset-id'))){
+        row.removeClass("selected");
+        row.find("td").first().find("span").remove();
+      }
+      else{
+        console.log("Deselect operation failed!");
+      }
     }
     else if (select(row)) {
       row.addClass("selected");
+      // TODO -- add check mark to selected datasets
+      row.find("td").first().append("<span class='glyphicon glyphicon-play></span> ");
     }
     else {
       console.log("Error transforming variable workspace.");
     }
 
+  });
+
+  // attach click handler to buttons
+  $("#variables").on("click", "button", function(event){
+    var variable = $(this).attr('variable-name')
+      , id = $(this).parent().attr('dataset-id');
+
+    // calling Alex's function, so we need to make sure it's loaded
+     visualize(id, variable);
+     console.log("Called Alex's visualize with" + id + " and " + variable);
   });
 
 });
@@ -44,7 +62,7 @@ $(document).ready(function(){
 //  workspace
 function select(dataset) {
   // get variable names and populate options
-  var id = dataset.attr("dataset_id");
+  var id = dataset.attr("dataset-id");
   var ret = true;
   $.getJSON("get-vars/" + id + "/", function(data, textStatus, jqXHR){
     console.log(data);
@@ -65,7 +83,7 @@ function select(dataset) {
 
 // Removes the variables from the selected dataset from the workspace
 function deselect(id){
-  if(!isNaN(id)){
+  if(isNaN(id)){
     return false;
   }
 
@@ -82,12 +100,16 @@ function construct_workspace_html(id, data){
     console.log("Received field " + key);
 
     // construct children divs per field
-    html += "<div id='" + key + "-" + id + "'>";
+    html += "<div id='" + key + "-" + id + "' dataset-id='" + id + "'";
+    html += "' class='btn-group btn-group-justified variable-btn-set'";
+    html += "role='group' aria-label='...' >";
     $.each(variables, function(index, variable){
-      html += "<button dataset-id='" + id + "' variable-name='" + variable + "' class='btn btn-info'>";
-      html += "<span class='glyphicon glyphicon-wrench' aria-hidden='true'></span>";
-      html += variable; 
-      html += "</button>";
+      var btn = "<button " + "variable-name='" + variable;
+      btn += "' class='btn btn-info btn-variable'>";
+      btn += "<span class='glyphicon glyphicon-wrench' aria-hidden='true'></span> ";
+      btn += variable; 
+      btn += "</button>";
+      html += btn;
     });
     html += "</div>"
   
@@ -101,9 +123,7 @@ function construct_workspace_html(id, data){
 function activate_workspace(id){
   $("#variables-" + id).find("div[id$='-" + id + "']").draggable({
     scroll: true,
-    containment: "parent", 
-    cursor: "move",
-    revert: true,  
-    opacity: 0.7
+    cursor: "move",  
+    opacity: 0.8
   });
 }

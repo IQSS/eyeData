@@ -47,11 +47,33 @@ tr.hover a {
   color: black;
 }
 
+tr.selected a {
+  color: blue;
+}
+
 tr.hover a:hover {
   color: #337ab7;
+}
+
+tr.selected a:hover{
+  color: #20C4E2;
 }
 
 tr.selected {
   background-color: gray; 
   color: white;
+}
+
+#variables {
+  width: 80%;
+  display: table;
+  margin: 10px auto;
+}
+
+.variable-btn-set {
+  margin: 5px 5px 5px 5px;
+}
+
+.btn-variable {
+  width: initial    !important;
 }

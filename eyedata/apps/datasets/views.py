@@ -175,7 +175,8 @@ def get_variable_info(request, dataset_id, variable_name):
         else:
             counts = ["invalid variable name"] 
 
-        file_info = { 'x' : counts, 'y': counts, 'graph type': 'bar', 'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
+        # need to convert to list so json encode
+        file_info = { 'x' : list(counts), 'y': list(counts), 'graph type': 'bar', 'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
         #file_info = {'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
         #file_info = { 'num_lines' : len(flines), 'variable_names' : list(data.columns.values) }
         #file_info = dataset.get_variable_name_info_json
