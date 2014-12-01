@@ -14,6 +14,9 @@ $(document).ready(function(){
   // change the color of the search field to black
   $(".dataTables_filter > label > input").css("color", "black");
   $(".dataTables_scrollBody").css("height","50%");
+  $("input[type='search']").change(function(){
+    $(".dataTables_scrollBody").css("height","50%");
+  });
   
   // add hover ability to table rows
   $("#datasets-table tr").hover(function(){

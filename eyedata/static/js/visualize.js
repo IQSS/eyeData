@@ -8,6 +8,7 @@
 var w = 500;
 var h = 800;
 var padding = 1;
+var svg;
 
 function visualize(data_id, variable) {
 
@@ -17,10 +18,10 @@ function visualize(data_id, variable) {
   // var data_json = fun(data_id, variable);
   $.getJSON("variable-detail/" + data_id + "/" + variable + "/", function(dataset) {
   // var dataset = JSON.parse(data_json);
-
+  console.log(dataset);
     // to scale the data to fit the screen
     var yScale = d3.scale.linear()
-             .domain([0, d3.max(dataset.data)])
+             .domain([0, d3.max(dataset.y)])
              .range([h - padding, padding]);
 
     switch (dataset.type) {
@@ -40,9 +41,13 @@ function visualize(data_id, variable) {
 //              visualize_scatter(dataset);
 //              label(dataset);
 //              break;
-  }
+    }
 
-    label(dataset, yScale);
+    // label(dataset, yScale);
+
+    // show the modal
+    $("visualization").modal('show');
+
   });
 }
 
@@ -50,7 +55,7 @@ function visualize(data_id, variable) {
 // can I make the graph a d3 object and return it?
 function visualize_bar(dataset, yScale) {
 
-  var svg = d3.select(".cover-container")
+  var svg = d3.select("#visualization.modal-body")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -94,15 +99,15 @@ function label(dataset, yScale) {                     // adds axes, titles, scal
     .style("font-size", "16px") 
     .text(dataset.title);
 
- var yAxis = d3.svg.axis()                          // function to create y-axis
-  .scale(yScale)
-  .orient("left")
-  .ticks(10);                      // roughly ten tick marks
+   var yAxis = d3.svg.axis()                          // function to create y-axis
+    .scale(yScale)
+    .orient("left")
+    .ticks(10);                      // roughly ten tick marks
 
-svg.append("g")
-  .attr("class", "axis")
-  .attr("transform", "translate(0, " + padding + ")")
-  .call(yAxis);
+  svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0, " + padding + ")")
+    .call(yAxis);
 
          // x axis
 
