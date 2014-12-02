@@ -4,15 +4,76 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-.hero-spacer {
-     margin-top: 30px; 
-    /* margin-top: 50px; */
+.site-wrapper-inner {
+  vertical-align: top;
+  display: block;
 }
 
-.hero-feature {
-    margin-bottom: 30px;
+.site-wrapper {
+  display: block;
+  margin-top: -5px
 }
 
-.panel-body {
+
+.cover {
+  margin-top: 5%;
+}
+
+/* tables */
+.table-scroll tbody {
+  overflow: auto;
+}
+
+table.tablesorter thead tr .header {
+  background-image: url(../images/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+  background-image: url(../images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url(../images/desc.gif);
+}
+
+tr.hover {
+  background-color: white;
   color: black;
+}
+
+tr.hover a {
+  color: black;
+}
+
+tr.selected a {
+  color: blue;
+}
+
+tr.hover a:hover {
+  color: #337ab7;
+}
+
+tr.selected a:hover{
+  color: #20C4E2;
+}
+
+tr.selected {
+  background-color: gray; 
+  color: white;
+}
+
+#variables {
+  width: 80%;
+  display: table;
+  margin: 10px auto;
+}
+
+.variable-btn-set {
+  margin: 5px 5px 5px 5px;
+}
+
+.btn-variable {
+  width: initial    !important;
 }

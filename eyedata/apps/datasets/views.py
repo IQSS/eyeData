@@ -140,7 +140,18 @@ def get_variable_names(request, dataset_id):
     #    file_info = {'variable_names' : list(data.columns.values) }
     #    dataset.set_variable_names_json(file_info)
     #    dataset.save() 
-    return HttpResponse(str(file_info), content_type="application/json")
+    # return HttpResponse(str(file_info), content_type="application/json")
+
+
+    #     print('hello hello')
+
+    #     file_info = {'variable_names' : list(data.columns.values) }
+    #     dataset.set_variable_names_json(file_info)
+    #     dataset.save() 
+
+    return HttpResponse(json.dumps(file_info), content_type="application/json")
+
+
 
 def get_variable_info(request, dataset_id, variable_name):     
     try:
@@ -182,6 +193,7 @@ def get_variable_info(request, dataset_id, variable_name):
 
     else:
         file_info = {'x': [0], 'y': [0], 'gaph type': 'invalid', 'graph title': 'invalid','x_axis' : variable_name, 'y_axis': 'Quantity'} 
+
 
     # (3) Do some type of processing here
     #SWITCH THIS BACK TO NOT ONCE IT WORKS CORRECTLY
@@ -235,6 +247,9 @@ def get_variable_info(request, dataset_id, variable_name):
         #     counts = ["invalid variable name"] 
 
 #        file_info = { 'x' : counts, 'y': counts, 'graph type': 'bar', 'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
+
+        # need to convert to list so json encode
+        #file_info = { 'x' : list(counts), 'y': list(counts), 'graph type': 'bar', 'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
         #file_info = {'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
         #file_info = { 'num_lines' : len(flines), 'variable_names' : list(data.columns.values) }
         #file_info = dataset.get_variable_name_info_json
@@ -246,8 +261,10 @@ def get_variable_info(request, dataset_id, variable_name):
         #dataset.save() 
 
     #return render_to_response('datasets/info.html', d, context_instance=RequestContext(request))
-    return HttpResponse(str(file_info), content_type="application/json")
+    #return HttpResponse(str(file_info), content_type="application/json")
     
+    return HttpResponse(json.dumps(file_info), content_type="application/json")
+
 
 # search view - renders a results page     
 def search(request):
