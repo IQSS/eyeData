@@ -20,7 +20,8 @@ dist/
 downloads/
 eggs/
 lib/
-lib64/
+# commented out to include mod_wsgi.so.python2.7
+#lib64/
 parts/
 sdist/
 var/

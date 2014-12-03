@@ -15,7 +15,8 @@ yum install -y gcc-c++
 echo "Installing Python 2.7"
 rpm --import http://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/os/RPM-GPG-KEY-sl
 yum install -y http://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/external_products/softwarecollections/yum-conf-softwarecollections-1.0-1.el6.noarch.rpm
-yum install -y python27
+# for scipy
+yum install blas-devel lapack-devel
 echo "Setting up Django app with Python 2.7"
 echo "Installing pip for Python 2.7"
 scl enable python27 "easy_install pip"
@@ -52,6 +53,13 @@ chmod 664 -R /webapps/data/eyedata/sqlite/
 echo "Configure Apache"
 cp /webapps/code/eyeData/deploy/vagrant-centos-eyedata.conf /etc/httpd/conf.d/eyedata.conf
 chown plaid /etc/httpd/conf.d/eyedata.conf
+
+# quick fix to make Apache run Python 2.7
+cp /git/eyeData/deploy/files/usr/lib64/httpd/modules/mod_wsgi.so.python2.7 /usr/lib64/httpd/modules/mod_wsgi.so.python2.7
+cp -a /etc/httpd/conf.d/wsgi.conf /etc/httpd/conf.d/wsgi.conf.orig
+cp /git/eyeData/deploy/files/etc/httpd/conf.d/wsgi.conf /etc/httpd/conf.d/wsgi.conf
+cp -a /etc/sysconfig/httpd /etc/sysconfig/httpd.orig
+cp /git/eyeData/deploy/files/etc/sysconfig/httpd /etc/sysconfig/httpd
 
 echo "Create /var/www directory owned by plaid"
 mkdir /var/www/eyedata
