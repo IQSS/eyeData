@@ -6,20 +6,24 @@
 
 
 {% block extra_css %}
-<style>
-a {text-decoration:underline;}
-a:hover {color:#ffcc00;}
-</style>
+    <style>
+        a {
+            text-decoration:underline;
+        }
+        a:hover {
+            color:#211DC3;
+        }
+    </style>
+    <link href="{{ STATIC_URL }}css/eyedata.css" rel="stylesheet"/>
 {% endblock %}
 
 {% block main_content %}
-   <div class="row">
-        <div class="col-lg-12">
-            <h1>{{ page_title }}</h1>
-            
-            <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
+    <div class="container-fluid">
+        <h1>{{ page_title }}</h1>
+        <p><b>{{ dataset_count }}</b> data set{{ dataset_count|pluralize }} found.
             <a href="{% url 'admin:datasets_datasetinfo_changelist' %}">(edit)</a>
-            <table class="table table-bordered">
+        <div class="row">    
+            <table id="datasets-table" class="table">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -31,7 +35,7 @@ a:hover {color:#ffcc00;}
                 </thead>
                 <tbody>
                     {% for d in datasets %}
-                    <tr>
+                    <tr dataset-id="{{ d.id }}">
                         <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'view_dataset_detail' d.id %}">{{ d.name }}</td>  
                         <td>{% if d.description %}
@@ -39,7 +43,7 @@ a:hover {color:#ffcc00;}
                             {% else %}
                                 (no description)
                             {% endif %}</td>  
-                        <td>{{ d.get_file_basename }}{# note lack of "()" in function call #}</td>
+                        <td>{{ d.get_file_basename }}</td>
                             
                         <td>{{ d.created|date:"M j, Y  P" }}</td>
                     </tr>
@@ -51,5 +55,36 @@ a:hover {color:#ffcc00;}
                 <tbody>
             </table>
         </div>
+        <!-- /.row -->
+        <div id="variables" class="row">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="visualization" tabindex="-1" role="dialog" aria-labelledby="Graphic" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Visualization</h4>
+              </div>
+              <div class="modal-body">
+                Something went wrong here!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#variables -->
     </div>
+    <!-- /.container-fluid -->
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Table Sorter-->
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.metadata.js"></script>
+    <!-- Custom eyedata javascript -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/visualize.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/eyedata.js"></script>
 {% endblock %}

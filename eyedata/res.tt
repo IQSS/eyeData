@@ -1,0 +1,391 @@
+Downloading/unpacking pandas
+  Running setup.py (path:C:\Users\Luis\Envs\eyedata\build\pandas\setup.py) egg_info for package pandas
+    non-existing path in 'numpy\\distutils': 'site.cfg'
+    non-existing path in 'numpy\\f2py': 'docs'
+    non-existing path in 'numpy\\f2py': 'f2py.1'
+    non-existing path in 'numpy\\lib': 'benchmarks'
+    Running from numpy source directory.
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1526: UserWarning:
+        Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [atlas]) or by setting
+        the ATLAS environment variable.
+      warnings.warn(AtlasNotFoundError.__doc__)
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1535: UserWarning:
+        Blas (http://www.netlib.org/blas/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [blas]) or by setting
+        the BLAS environment variable.
+      warnings.warn(BlasNotFoundError.__doc__)
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1538: UserWarning:
+        Blas (http://www.netlib.org/blas/) sources not found.
+        Directories to search for the sources can be specified in the
+        numpy/distutils/site.cfg file (section [blas_src]) or by setting
+        the BLAS_SRC environment variable.
+      warnings.warn(BlasSrcNotFoundError.__doc__)
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1432: UserWarning:
+        Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [atlas]) or by setting
+        the ATLAS environment variable.
+      warnings.warn(AtlasNotFoundError.__doc__)
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1443: UserWarning:
+        Lapack (http://www.netlib.org/lapack/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [lapack]) or by setting
+        the LAPACK environment variable.
+      warnings.warn(LapackNotFoundError.__doc__)
+    C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1446: UserWarning:
+        Lapack (http://www.netlib.org/lapack/) sources not found.
+        Directories to search for the sources can be specified in the
+        numpy/distutils/site.cfg file (section [lapack_src]) or by setting
+        the LAPACK_SRC environment variable.
+      warnings.warn(LapackSrcNotFoundError.__doc__)
+    C:\Python34\Lib\distutils\dist.py:260: UserWarning: Unknown distribution option: 'define_macros'
+      warnings.warn(msg)
+    Traceback (most recent call last):
+      File "C:\Python34\Lib\distutils\core.py", line 149, in setup
+        dist.run_commands()
+      File "C:\Python34\Lib\distutils\dist.py", line 955, in run_commands
+        self.run_command(cmd)
+      File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\bdist_egg.py", line 177, in run
+        self.run_command("egg_info")
+      File "C:\Python34\Lib\distutils\cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\egg_info.py", line 10, in run
+      File "C:\Python34\Lib\distutils\cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 153, in run
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 164, in build_sources
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 299, in build_library_sources
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 386, in generate_sources
+      File "numpy\core\setup.py", line 684, in get_mathlib_info
+      File "C:\Python34\Lib\distutils\command\config.py", line 243, in try_link
+        self._check_compiler()
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\config.py", line 57, in _check_compiler
+      File "C:\Python34\Lib\distutils\msvc9compiler.py", line 371, in initialize
+        vc_env = query_vcvarsall(VERSION, plat_spec)
+      File "C:\Python34\Lib\distutils\msvc9compiler.py", line 259, in query_vcvarsall
+        raise DistutilsPlatformError("Unable to find vcvarsall.bat")
+    distutils.errors.DistutilsPlatformError: Unable to find vcvarsall.bat
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1000, in run_setup
+        run_setup(setup_script, args)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 50, in run_setup
+        lambda: execfile(
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 100, in run
+        return func()
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 52, in <lambda>
+        {'__file__':setup_script, '__name__':'__main__'}
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\compat.py", line 78, in execfile
+        exec(compile(source, fn, 'exec'), globs, locs)
+      File "setup.py", line 251, in <module>
+        try:
+      File "setup.py", line 243, in setup_package
+        version = '%s'
+      File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\core.py", line 169, in setup
+      File "C:\Python34\Lib\distutils\core.py", line 166, in setup
+        raise SystemExit("error: " + str(msg))
+    SystemExit: error: Unable to find vcvarsall.bat
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "<string>", line 17, in <module>
+      File "C:\Users\Luis\Envs\eyedata\build\pandas\setup.py", line 619, in <module>
+        **setuptools_kwargs)
+      File "C:\Python34\Lib\distutils\core.py", line 109, in setup
+        _setup_distribution = dist = klass(attrs)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 239, in __init__
+        self.fetch_build_eggs(attrs.pop('setup_requires'))
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 264, in fetch_build_eggs
+        replace_conflicting=True
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 580, in resolve
+        dist = best[req.key] = env.best_match(req, ws, installer)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 818, in best_match
+        return self.obtain(req, installer) # try and download/install
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 830, in obtain
+        return installer(requirement)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 314, in fetch_build_egg
+        return cmd.easy_install(req)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 593, in easy_install
+        return self.install_item(spec, dist.location, tmpdir, deps)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 623, in install_item
+        dists = self.install_eggs(spec, download, tmpdir)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 809, in install_eggs
+        return self.build_and_install(setup_script, setup_base)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1015, in build_and_install
+        self.run_setup(setup_script, setup_base, args)
+      File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1003, in run_setup
+        raise DistutilsError("Setup script exited with %s" % (v.args[0],))
+    distutils.errors.DistutilsError: Setup script exited with error: Unable to find vcvarsall.bat
+    Complete output from command python setup.py egg_info:
+    non-existing path in 'numpy\\distutils': 'site.cfg'
+
+non-existing path in 'numpy\\f2py': 'docs'
+
+non-existing path in 'numpy\\f2py': 'f2py.1'
+
+non-existing path in 'numpy\\lib': 'benchmarks'
+
+Running from numpy source directory.
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1526: UserWarning:
+
+    Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+
+    Directories to search for the libraries can be specified in the
+
+    numpy/distutils/site.cfg file (section [atlas]) or by setting
+
+    the ATLAS environment variable.
+
+  warnings.warn(AtlasNotFoundError.__doc__)
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1535: UserWarning:
+
+    Blas (http://www.netlib.org/blas/) libraries not found.
+
+    Directories to search for the libraries can be specified in the
+
+    numpy/distutils/site.cfg file (section [blas]) or by setting
+
+    the BLAS environment variable.
+
+  warnings.warn(BlasNotFoundError.__doc__)
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1538: UserWarning:
+
+    Blas (http://www.netlib.org/blas/) sources not found.
+
+    Directories to search for the sources can be specified in the
+
+    numpy/distutils/site.cfg file (section [blas_src]) or by setting
+
+    the BLAS_SRC environment variable.
+
+  warnings.warn(BlasSrcNotFoundError.__doc__)
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1432: UserWarning:
+
+    Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+
+    Directories to search for the libraries can be specified in the
+
+    numpy/distutils/site.cfg file (section [atlas]) or by setting
+
+    the ATLAS environment variable.
+
+  warnings.warn(AtlasNotFoundError.__doc__)
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1443: UserWarning:
+
+    Lapack (http://www.netlib.org/lapack/) libraries not found.
+
+    Directories to search for the libraries can be specified in the
+
+    numpy/distutils/site.cfg file (section [lapack]) or by setting
+
+    the LAPACK environment variable.
+
+  warnings.warn(LapackNotFoundError.__doc__)
+
+C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\system_info.py:1446: UserWarning:
+
+    Lapack (http://www.netlib.org/lapack/) sources not found.
+
+    Directories to search for the sources can be specified in the
+
+    numpy/distutils/site.cfg file (section [lapack_src]) or by setting
+
+    the LAPACK_SRC environment variable.
+
+  warnings.warn(LapackSrcNotFoundError.__doc__)
+
+C:\Python34\Lib\distutils\dist.py:260: UserWarning: Unknown distribution option: 'define_macros'
+
+  warnings.warn(msg)
+
+Traceback (most recent call last):
+
+  File "C:\Python34\Lib\distutils\core.py", line 149, in setup
+
+    dist.run_commands()
+
+  File "C:\Python34\Lib\distutils\dist.py", line 955, in run_commands
+
+    self.run_command(cmd)
+
+  File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+
+    cmd_obj.run()
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\bdist_egg.py", line 177, in run
+
+    self.run_command("egg_info")
+
+  File "C:\Python34\Lib\distutils\cmd.py", line 313, in run_command
+
+    self.distribution.run_command(command)
+
+  File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+
+    cmd_obj.run()
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\egg_info.py", line 10, in run
+
+  File "C:\Python34\Lib\distutils\cmd.py", line 313, in run_command
+
+    self.distribution.run_command(command)
+
+  File "C:\Python34\Lib\distutils\dist.py", line 974, in run_command
+
+    cmd_obj.run()
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 153, in run
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 164, in build_sources
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 299, in build_library_sources
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\build_src.py", line 386, in generate_sources
+
+  File "numpy\core\setup.py", line 684, in get_mathlib_info
+
+  File "C:\Python34\Lib\distutils\command\config.py", line 243, in try_link
+
+    self._check_compiler()
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\command\config.py", line 57, in _check_compiler
+
+  File "C:\Python34\Lib\distutils\msvc9compiler.py", line 371, in initialize
+
+    vc_env = query_vcvarsall(VERSION, plat_spec)
+
+  File "C:\Python34\Lib\distutils\msvc9compiler.py", line 259, in query_vcvarsall
+
+    raise DistutilsPlatformError("Unable to find vcvarsall.bat")
+
+distutils.errors.DistutilsPlatformError: Unable to find vcvarsall.bat
+
+
+
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1000, in run_setup
+
+    run_setup(setup_script, args)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 50, in run_setup
+
+    lambda: execfile(
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 100, in run
+
+    return func()
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\sandbox.py", line 52, in <lambda>
+
+    {'__file__':setup_script, '__name__':'__main__'}
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\compat.py", line 78, in execfile
+
+    exec(compile(source, fn, 'exec'), globs, locs)
+
+  File "setup.py", line 251, in <module>
+
+    try:
+
+  File "setup.py", line 243, in setup_package
+
+    version = '%s'
+
+  File "C:\Users\Luis\AppData\Local\Temp\easy_install-ugg4y3u8\numpy-1.9.0\numpy\distutils\core.py", line 169, in setup
+
+  File "C:\Python34\Lib\distutils\core.py", line 166, in setup
+
+    raise SystemExit("error: " + str(msg))
+
+SystemExit: error: Unable to find vcvarsall.bat
+
+
+
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 17, in <module>
+
+  File "C:\Users\Luis\Envs\eyedata\build\pandas\setup.py", line 619, in <module>
+
+    **setuptools_kwargs)
+
+  File "C:\Python34\Lib\distutils\core.py", line 109, in setup
+
+    _setup_distribution = dist = klass(attrs)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 239, in __init__
+
+    self.fetch_build_eggs(attrs.pop('setup_requires'))
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 264, in fetch_build_eggs
+
+    replace_conflicting=True
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 580, in resolve
+
+    dist = best[req.key] = env.best_match(req, ws, installer)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 818, in best_match
+
+    return self.obtain(req, installer) # try and download/install
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\pkg_resources.py", line 830, in obtain
+
+    return installer(requirement)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\dist.py", line 314, in fetch_build_egg
+
+    return cmd.easy_install(req)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 593, in easy_install
+
+    return self.install_item(spec, dist.location, tmpdir, deps)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 623, in install_item
+
+    dists = self.install_eggs(spec, download, tmpdir)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 809, in install_eggs
+
+    return self.build_and_install(setup_script, setup_base)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1015, in build_and_install
+
+    self.run_setup(setup_script, setup_base, args)
+
+  File "C:\Users\Luis\Envs\eyedata\lib\site-packages\setuptools\command\easy_install.py", line 1003, in run_setup
+
+    raise DistutilsError("Setup script exited with %s" % (v.args[0],))
+
+distutils.errors.DistutilsError: Setup script exited with error: Unable to find vcvarsall.bat
+
+----------------------------------------
+Cleaning up...
+Command python setup.py egg_info failed with error code 1 in C:\Users\Luis\Envs\eyedata\build\pandas
+Storing debug log for failure in C:\Users\Luis\pip\pip.log

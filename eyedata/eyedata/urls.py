@@ -22,9 +22,7 @@ urlpatterns = patterns('',
 
     url(r'^datasets/', include('apps.datasets.urls')),
     
-    url(r'^', include('apps.basic_pages.urls')),
-    
-    
+    url(r'^', include('apps.basic_pages.urls'))
 )
 
 # Uncomment the next line to serve media files in dev.
