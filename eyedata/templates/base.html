@@ -64,7 +64,6 @@
 		// currently assuming univariate, need to create condition to handle multiple variables
 		// var data_json = fun(data_id, variable);
                 $.getJSON("/variable-detail/" + data_id + "/" + variable + "/", function(dataset) {
-			// var dataset = JSON.parse(data_json);
 
 			// to scale the data to fit the screen
 			var yScale = d3.scale.linear()
@@ -124,13 +123,24 @@
 		    });
 
 		svg.selectAll("text")                             // add y values on the corresponding bars
-		    .data(dataset.data)                           
+		    .data(dataset.xVals)                           
 		    .enter()
 		    .append("text")
 		    .text(function(d) {
 			return d;
 		    });
 	    }
+
+            function visualize_density(dataset, yScale) {
+
+                var svg = d3.select(".cover-container")
+                            .append("svg")
+                            .attr("width", w)
+                            .attr("height", h);
+
+                
+
+            }
 
 	    // set up title, axes, etc.
 	    function label(dataset, yScale) {                     // adds axes, titles, scales
