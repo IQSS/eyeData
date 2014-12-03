@@ -179,10 +179,14 @@ def get_variable_info(request, dataset_id, variable_name):
         data['storer'] = 1
         counts = data.groupby(variable_name).count()
         counts.reset_index(inplace=True)
-        counts = counts[np.isfinite(counts[variable_name])]
+        print("hello")
+        if (not isinstance(counts[variable_name][0], basestring)): 
+            counts = counts[np.isfinite(counts[variable_name])]
         if len(counts.index) <= 15: 
             file_info = { 'x' : list(counts[variable_name]), 'y': list(counts['storer']), 'graph type': 'bar', 'graph title' : d['page_title'], 'x_axis' : variable_name, 'y_axis': 'Quantity'}
-        else:   
+        else:  
+            if (not isinstance(counts[variable_name][0], basestring)): 
+                counts = counts[np.isfinite(counts[variable_name])] 
             data = data[np.isfinite(data[variable_name])]
             density = stats.kde.gaussian_kde(data[variable_name])
             x = list(data[variable_name].unique())
