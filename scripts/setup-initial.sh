@@ -53,6 +53,13 @@ echo "Configure Apache"
 cp /webapps/code/eyeData/deploy/vagrant-centos-eyedata.conf /etc/httpd/conf.d/eyedata.conf
 chown plaid /etc/httpd/conf.d/eyedata.conf
 
+# quick fix to make Apache run Python 2.7
+cp /git/eyeData/deploy/files/usr/lib64/httpd/modules/mod_wsgi.so.python2.7 /usr/lib64/httpd/modules/mod_wsgi.so.python2.7
+cp -a /etc/httpd/conf.d/wsgi.conf /etc/httpd/conf.d/wsgi.conf.orig
+cp /git/eyeData/deploy/files/etc/httpd/conf.d/wsgi.conf /etc/httpd/conf.d/wsgi.conf
+cp -a /etc/sysconfig/httpd /etc/sysconfig/httpd.orig
+cp /git/eyeData/deploy/files/etc/sysconfig/httpd /etc/sysconfig/httpd
+
 echo "Create /var/www directory owned by plaid"
 mkdir /var/www/eyedata
 chown plaid /var/www/eyedata
