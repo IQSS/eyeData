@@ -77,3 +77,8 @@ tr.selected {
 .btn-variable {
   width: initial    !important;
 }
+
+/* change modal text to black and remove shadow */
+.modal-body, .modal-title, .modal-header {
+  color: black;
+}

@@ -32,7 +32,7 @@ function visualize(data_id, variable) {
           break;
 
           case "density":
-          visualize_density(dataset, yScale);
+          visualize_bar(dataset, yScale);
           break;
 
       }
@@ -46,6 +46,8 @@ function visualize(data_id, variable) {
 
 function visualize_bar(dataset, yScale) {
 
+    // clear contents of $viz_space
+    $("#viz_space").empty();
     var svg = d3.select("#viz_space")
                 .append("svg")
                 .attr("width", w)
