@@ -1,4 +1,4 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,6 +27,26 @@ CTYPE html>
     <![endif]-->
     
     {% block extra_css %}
+
+    <style type="text/css">
+        #visualization {
+            color: black;
+        }
+
+	.axis path,
+	.axis line {
+	    fill: none;
+	    stroke: black;
+	    shape-rendering: crispEdges;
+	}
+			
+        .axis text {
+	    font-family: sans-serif;
+	    font-size: 11px;
+            color: black;
+	}
+    </style>
+
     {% endblock extra_css %}
 
 </head>
