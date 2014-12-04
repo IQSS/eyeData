@@ -11,7 +11,7 @@ rm(list=ls())
 setwd("Projects/eyeData/data")
 
 # read data
-mydata <- read.delim("WorkerRepresentation/Data/wrps1.tab")
+mydata <- read.delim("MicrofinanceInHyderabad/Data/spandana_baseline_b2.0.dta")
 
 # table the data
 plottable <- table(mydata$s5)

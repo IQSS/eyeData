@@ -8,6 +8,7 @@
         "data_file": "datasets/2014/11/05/spandana_baseline_b2.0.dta", 
         "modified": "2014-11-06T02:23:41.498Z", 
         "variable_names_json": "", 
+        "variable_name_info_json": "test",
         "visible": true, 
         "slug": "microfinance-hyderabad", 
         "name": "Microfinance Hyderabad"
@@ -22,6 +23,7 @@
         "data_file": "datasets/2014/11/05/wrps1.tab", 
         "modified": "2014-11-06T02:12:30.169Z", 
         "variable_names_json": "{\"num_lines\": 2409}", 
+        "variable_name_info_json": "test",
         "visible": true, 
         "slug": "worker-representation", 
         "name": "Worker Representation"
